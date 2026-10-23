@@ -1,0 +1,43 @@
+<!--
+  COMPONENTE COMÚN: CABECERA Y BARRA DE NAVEGACIÓN FLOTANTE (ESTILO CRISTAL)
+  Oier Santo Tomás Gamayo - Portafolio Interactivo
+-->
+<header class="cabecera-flotante">
+  <nav class="navegacion-principal" aria-label="Navegación principal del sitio">
+    <!-- Logotipo y Monograma Minimalista -->
+    <a href="#hero" class="logotipo enlace-scroll" data-destino="hero" aria-label="Ir al inicio - Oier Santo Tomás">
+      <span class="logotipo__glifo" aria-hidden="true"></span>
+      <span class="logotipo__texto">
+        OIER <span class="logotipo__subtexto">[STG]</span>
+      </span>
+    </a>
+
+    <!-- Enlaces de Navegación Centrales -->
+    <div class="navegacion-enlaces" role="menubar">
+      <button type="button" class="enlace-navegacion activo" data-destino="hero" role="menuitem">00. INICIO</button>
+      <button type="button" class="enlace-navegacion" data-destino="vision" role="menuitem">01. VISIÓN</button>
+      <button type="button" class="enlace-navegacion" data-destino="trayectoria" role="menuitem">02. TRAYECTORIA</button>
+      <button type="button" class="enlace-navegacion" data-destino="stack" role="menuitem">03. STACK</button>
+      <button type="button" class="enlace-navegacion" data-destino="contacto" role="menuitem">04. CONTACTO</button>
+    </div>
+
+    <!-- Indicador de Disponibilidad y Control de Audio -->
+    <div class="navegacion-acciones">
+      <div class="indicador-disponibilidad" title="Disponible para proyectos e incorporación inmediata">
+        <span class="indicador-disponibilidad__punto" aria-hidden="true">
+          <span class="indicador-disponibilidad__onda"></span>
+          <span class="indicador-disponibilidad__nucleo"></span>
+        </span>
+        <span class="indicador-disponibilidad__texto--largo">[●] DISPONIBLE PARA PROYECTOS // BASAURI, BIZKAIA</span>
+        <span class="indicador-disponibilidad__texto--corto">DISPONIBLE // BIZKAIA</span>
+      </div>
+
+      <button type="button" id="boton-alternar-audio" class="boton-audio" aria-label="Activar audio cristalino HUD" title="Activar audio cristalino HUD">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

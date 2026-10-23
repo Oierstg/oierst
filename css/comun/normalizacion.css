@@ -1,0 +1,119 @@
+/**
+ * NORMALIZACIÓN Y ESTILOS BASE TÉCNICOS
+ * Oier Santo Tomás Gamayo - Portafolio Interactivo
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-fondo-primario);
+  color: var(--color-texto-principal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--color-fondo-primario);
+  color: var(--color-texto-secundario);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Indicadores de Accesibilidad Nítidos (WCAG 2.1 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 3px;
+  border-radius: var(--radio-sm);
+}
+
+/* Selección de Texto Estilizada */
+::selection {
+  background-color: var(--color-acento-medio);
+  color: var(--color-texto-principal);
+}
+
+/* Elementos Multimedia e Iconos */
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Barras de Desplazamiento Sobrias */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo-primario);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fondo-elevado);
+  border: 2px solid var(--color-fondo-primario);
+  border-radius: var(--radio-completo);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-borde-destacado);
+}
+
+/* Soporte para Reducción de Movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Clase de Utilidad para Ocultar Elementos sin Estilos en Línea */
+.elemento-oculto {
+  display: none !important;
+}
+
+

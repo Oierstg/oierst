@@ -1,0 +1,89 @@
+/**
+ * VARIABLES GLOBALES Y TOKENS DE DISEÑO
+ * Sistema visual corporativo de alta precisión (Enterprise Grade)
+ * Oier Santo Tomás Gamayo - Portafolio Interactivo
+ */
+
+:root {
+  /* Escala Cromática: Neutros de Alta Precisión */
+  --color-fondo-primario: #090b0e;
+  --color-fondo-secundario: #11151c;
+  --color-fondo-elevado: #161c26;
+  --color-superficie: rgba(17, 21, 28, 0.75);
+  --color-superficie-solida: #11151c;
+  --color-superficie-clara: rgba(255, 255, 255, 0.03);
+  --color-superficie-hover: rgba(255, 255, 255, 0.06);
+
+  /* Jerarquía de Texto y Contraste WCAG 2.1 AA */
+  --color-texto-principal: #ffffff;
+  --color-texto-secundario: #e2e8f0;
+  --color-texto-atenuado: #a0a5b1;
+  --color-texto-terciario: #64748b;
+  --color-texto-desactivado: #475569;
+
+  /* Bordes Técnicos Milimétricos */
+  --color-borde-sutil: rgba(255, 255, 255, 0.08);
+  --color-borde-medio: rgba(255, 255, 255, 0.14);
+  --color-borde-destacado: rgba(255, 255, 255, 0.25);
+
+  /* Color de Acento Institucional Sobrio (Cian Glaciar) */
+  --color-acento: #7dd3fc;
+  --color-acento-secundario: #38bdf8;
+  --color-acento-tenue: rgba(125, 211, 252, 0.12);
+  --color-acento-medio: rgba(125, 211, 252, 0.22);
+  --color-acento-borde: rgba(125, 211, 252, 0.45);
+  --color-acento-brillo: rgba(125, 211, 252, 0.35);
+
+  /* Indicadores de Estado */
+  --color-estado-activo: #10b981;
+  --color-estado-activo-tenue: rgba(16, 185, 129, 0.15);
+  --color-estado-advertencia: #f59e0b;
+  --color-estado-error: #ef4444;
+
+  /* Tipografías Técnicas Modernas */
+  --fuente-principal: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fuente-titulos: 'Syne', 'Inter', -apple-system, sans-serif;
+  --fuente-mono: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+
+  /* Escala de Espaciado (Regla del Múltiplo de 4px y 8px) */
+  --espacio-1: 4px;
+  --espacio-2: 8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 20px;
+  --espacio-6: 24px;
+  --espacio-8: 32px;
+  --espacio-10: 40px;
+  --espacio-12: 48px;
+  --espacio-16: 64px;
+  --espacio-20: 80px;
+  --espacio-24: 96px;
+  --espacio-32: 128px;
+
+  /* Radios de Curvatura */
+  --radio-sm: 6px;
+  --radio-md: 10px;
+  --radio-lg: 16px;
+  --radio-xl: 24px;
+  --radio-completo: 9999px;
+
+  /* Sombras y Elevaciones Técnicas */
+  --sombra-sutil: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  --sombra-tarjeta: 0 15px 35px -5px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--color-borde-sutil);
+  --sombra-flotante: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+  --sombra-acento: 0 0 30px rgba(125, 211, 252, 0.18);
+
+  /* Curvas de Transición Suaves */
+  --transicion-rapida: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-estandar: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-suave: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Capas de Profundidad (Z-Index) */
+  --capa-fondo: 0;
+  --capa-escena-3d: 10;
+  --capa-contenido: 20;
+  --capa-hud: 30;
+  --capa-grano: 40;
+  --capa-cabecera: 50;
+  --capa-modal: 100;
+}
