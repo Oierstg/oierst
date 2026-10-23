@@ -1,0 +1,3 @@
+# Ignorar todos los archivos Markdown en la raíz y en cualquier subdirectorio
+*.md
+**/*.md

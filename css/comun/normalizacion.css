@@ -1,9 +1,8 @@
 /**
  * NORMALIZACIÓN Y ESTILOS BASE TÉCNICOS
  * Oier Santo Tomás Gamayo - Portafolio Interactivo
+ * Fuentes tipográficas cargadas asíncronamente vía <link> en el head (cero bloqueo por @import)
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
 
 *,
 *::before,
@@ -114,6 +113,41 @@ a {
 /* Clase de Utilidad para Ocultar Elementos sin Estilos en Línea */
 .elemento-oculto {
   display: none !important;
+}
+
+/* Utilidad de Accesibilidad: Ocultación visual para lectores de pantalla (WCAG 2.1 AA) */
+.solo-lectores {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Enlace de Salto Directo al Contenido para Navegación con Teclado */
+.enlace-salto {
+  position: fixed;
+  top: -9999px;
+  left: var(--espacio-4);
+  z-index: calc(var(--capa-modal) + 10);
+  padding: var(--espacio-2) var(--espacio-4);
+  background-color: var(--color-fondo-elevado);
+  color: var(--color-acento);
+  border: 1px solid var(--color-acento-borde);
+  border-radius: var(--radio-sm);
+  font-family: var(--fuente-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--transicion-rapida);
+}
+
+.enlace-salto:focus {
+  top: var(--espacio-4);
 }
 
 

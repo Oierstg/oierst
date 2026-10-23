@@ -1,6 +1,7 @@
 <!--
   COMPONENTE COMÚN: CABECERA Y BARRA DE NAVEGACIÓN FLOTANTE (ESTILO CRISTAL)
   Oier Santo Tomás Gamayo - Portafolio Interactivo
+  Arquitectura accesible, diseño responsive y navegación optimizada
 -->
 <header class="cabecera-flotante">
   <nav class="navegacion-principal" aria-label="Navegación principal del sitio">
@@ -12,16 +13,16 @@
       </span>
     </a>
 
-    <!-- Enlaces de Navegación Centrales -->
-    <div class="navegacion-enlaces" role="menubar">
-      <button type="button" class="enlace-navegacion activo" data-destino="hero" role="menuitem">00. INICIO</button>
-      <button type="button" class="enlace-navegacion" data-destino="vision" role="menuitem">01. VISIÓN</button>
-      <button type="button" class="enlace-navegacion" data-destino="trayectoria" role="menuitem">02. TRAYECTORIA</button>
-      <button type="button" class="enlace-navegacion" data-destino="stack" role="menuitem">03. STACK</button>
-      <button type="button" class="enlace-navegacion" data-destino="contacto" role="menuitem">04. CONTACTO</button>
+    <!-- Enlaces de Navegación Centrales (Escritorio / Tablet >= 768px) -->
+    <div class="navegacion-enlaces" aria-label="Secciones del sitio">
+      <button type="button" class="enlace-navegacion activo" data-destino="hero">00. INICIO</button>
+      <button type="button" class="enlace-navegacion" data-destino="vision">01. VISIÓN</button>
+      <button type="button" class="enlace-navegacion" data-destino="trayectoria">02. TRAYECTORIA</button>
+      <button type="button" class="enlace-navegacion" data-destino="stack">03. STACK</button>
+      <button type="button" class="enlace-navegacion" data-destino="contacto">04. CONTACTO</button>
     </div>
 
-    <!-- Indicador de Disponibilidad y Control de Audio -->
+    <!-- Indicador de Disponibilidad, Control de Audio y Menú Móvil -->
     <div class="navegacion-acciones">
       <div class="indicador-disponibilidad" title="Disponible para proyectos e incorporación inmediata">
         <span class="indicador-disponibilidad__punto" aria-hidden="true">
@@ -38,6 +39,35 @@
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
         </svg>
       </button>
+
+      <!-- Botón de Menú Móvil (< 768px) -->
+      <button type="button" id="boton-menu-movil" class="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-movil-desplegable">
+        <svg class="icono-hamburguesa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="icono-cerrar elemento-oculto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
   </nav>
+
+  <!-- Panel Desplegable de Navegación Móvil -->
+  <div id="menu-movil-desplegable" class="menu-movil-desplegable" aria-hidden="true">
+    <div class="menu-movil-contenedor">
+      <div class="menu-movil-enlaces">
+        <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">00. INICIO</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="vision">01. VISIÓN</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">02. TRAYECTORIA</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="stack">03. STACK</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="contacto">04. CONTACTO</button>
+      </div>
+      <div class="menu-movil-pie">
+        <span>SYS.LOC // BASAURI, BIZKAIA [43.2361° N, 2.8883° W]</span>
+      </div>
+    </div>
+  </div>
 </header>

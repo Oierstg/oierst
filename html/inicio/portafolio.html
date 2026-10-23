@@ -7,9 +7,60 @@
   <meta name="theme-color" content="#090B0E">
   <title>Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist</title>
 
-  <!-- Fuentes Externas Google Fonts (Preconexión) -->
+  <!-- Metadatos de Redes Sociales (Open Graph y Twitter Cards) -->
+  <meta property="og:title" content="Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist">
+  <meta property="og:description" content="Especialista en Integración de Inteligencia Artificial, Automatización de Procesos y Desarrollo Multiplataforma. Perfil híbrido SMR + DAM + IA & Big Data.">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Oier Santo Tomás Gamayo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist">
+  <meta name="twitter:description" content="Automatización de flujos de trabajo, ingeniería de software e inteligencia artificial aplicada.">
+
+  <!-- Microdatos Semánticos Estructurados Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Oier Santo Tomás Gamayo",
+      "alternateName": "Oier STG",
+      "jobTitle": "Especialista en Integración de IA y Desarrollo Multiplataforma",
+      "description": "Perfil técnico híbrido que conecta sistemas microinformáticos y redes (SMR), desarrollo de aplicaciones multiplataforma (DAM) e Inteligencia Artificial & Big Data.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Basauri",
+        "addressRegion": "Bizkaia",
+        "addressCountry": "ES"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Centro Formación Somorrostro"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Centro de Estudios Almi"
+        }
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Process Automation",
+        "Systems Administration (Linux/Networking)",
+        "Multiplatform Development",
+        "Big Data",
+        "Voice AI",
+        "Local LLMs & Homelab"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fuentes Externas Google Fonts (Preconexión y Carga Directa sin Bloqueo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap">
 
   <!-- Hojas de Estilo en Arquitectura Espejo (Separación Absoluta de Tecnologías) -->
   <link rel="stylesheet" href="../../css/comun/variables.css">
@@ -23,6 +74,12 @@
   <script type="module" src="../../js/inicio/portafolio.js" defer></script>
 </head>
 <body class="pagina-portafolio">
+
+  <!-- Enlace de Salto para Usuarios de Teclado (WCAG 2.1 AA) -->
+  <a href="#hero" class="enlace-salto">Saltar al contenido principal</a>
+
+  <!-- Anunciador Dinámico Accesible para Lectores de Pantalla -->
+  <div id="anunciador-accesible" class="solo-lectores" aria-live="polite" aria-atomic="true"></div>
 
   <!-- =========================================================================
        CAPAS DE FONDO ATMOSFÉRICAS Y MARCAS TÉCNICAS HUD
@@ -68,16 +125,16 @@
         </span>
       </a>
 
-      <!-- Enlaces Centrales con Navegación Suave -->
-      <div class="navegacion-enlaces" role="menubar">
-        <button type="button" class="enlace-navegacion activo" data-destino="hero" role="menuitem">00. INICIO</button>
-        <button type="button" class="enlace-navegacion" data-destino="vision" role="menuitem">01. VISIÓN</button>
-        <button type="button" class="enlace-navegacion" data-destino="trayectoria" role="menuitem">02. TRAYECTORIA</button>
-        <button type="button" class="enlace-navegacion" data-destino="stack" role="menuitem">03. STACK</button>
-        <button type="button" class="enlace-navegacion" data-destino="contacto" role="menuitem">04. CONTACTO</button>
+      <!-- Enlaces Centrales con Navegación Suave (Escritorio / Tablet >= 768px) -->
+      <div class="navegacion-enlaces" aria-label="Secciones del sitio">
+        <button type="button" class="enlace-navegacion activo" data-destino="hero">00. INICIO</button>
+        <button type="button" class="enlace-navegacion" data-destino="vision">01. VISIÓN</button>
+        <button type="button" class="enlace-navegacion" data-destino="trayectoria">02. TRAYECTORIA</button>
+        <button type="button" class="enlace-navegacion" data-destino="stack">03. STACK</button>
+        <button type="button" class="enlace-navegacion" data-destino="contacto">04. CONTACTO</button>
       </div>
 
-      <!-- Disponibilidad y Control de Audio Glaciar -->
+      <!-- Disponibilidad, Control de Audio y Menú Móvil -->
       <div class="navegacion-acciones">
         <div class="indicador-disponibilidad" title="Disponible para proyectos e incorporación inmediata">
           <span class="indicador-disponibilidad__punto" aria-hidden="true">
@@ -94,8 +151,37 @@
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
           </svg>
         </button>
+
+        <!-- Botón de Menú Móvil (< 768px) -->
+        <button type="button" id="boton-menu-movil" class="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-movil-desplegable">
+          <svg class="icono-hamburguesa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icono-cerrar elemento-oculto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <!-- Panel Desplegable de Navegación Móvil -->
+    <div id="menu-movil-desplegable" class="menu-movil-desplegable" aria-hidden="true">
+      <div class="menu-movil-contenedor">
+        <div class="menu-movil-enlaces">
+          <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">00. INICIO</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="vision">01. VISIÓN</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">02. TRAYECTORIA</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="stack">03. STACK</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="contacto">04. CONTACTO</button>
+        </div>
+        <div class="menu-movil-pie">
+          <span>SYS.LOC // BASAURI, BIZKAIA [43.2361° N, 2.8883° W]</span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- =========================================================================
@@ -236,7 +322,10 @@
           <label for="deslizador-iluminacion" class="control-iluminacion-manifiesto__etiqueta">
             ILUMINACIÓN DE LECTURA: <span id="porcentaje-iluminacion">35%</span>
           </label>
-          <input type="range" id="deslizador-iluminacion" min="0.15" max="1" step="0.01" value="0.35" class="control-iluminacion-manifiesto__deslizador">
+          <div class="control-iluminacion-manifiesto__fila">
+            <input type="range" id="deslizador-iluminacion" min="0.15" max="1" step="0.01" value="0.35" class="control-iluminacion-manifiesto__deslizador" aria-label="Control de iluminación de lectura del manifiesto">
+            <button type="button" id="boton-reinicio-iluminacion" class="boton-reinicio-manifiesto" title="Restablecer iluminación automática por desplazamiento" aria-label="Restablecer iluminación automática por desplazamiento">AUTO</button>
+          </div>
         </div>
       </div>
 

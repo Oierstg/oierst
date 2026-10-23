@@ -18,8 +18,8 @@
   --color-texto-principal: #ffffff;
   --color-texto-secundario: #e2e8f0;
   --color-texto-atenuado: #a0a5b1;
-  --color-texto-terciario: #64748b;
-  --color-texto-desactivado: #475569;
+  --color-texto-terciario: #94a3b8;
+  --color-texto-desactivado: #64748b;
 
   /* Bordes Técnicos Milimétricos */
   --color-borde-sutil: rgba(255, 255, 255, 0.08);
@@ -52,6 +52,7 @@
   --espacio-4: 16px;
   --espacio-5: 20px;
   --espacio-6: 24px;
+  --espacio-7: 28px;
   --espacio-8: 32px;
   --espacio-10: 40px;
   --espacio-12: 48px;
