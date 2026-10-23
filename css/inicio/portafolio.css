@@ -156,7 +156,7 @@
 .cabecera-flotante {
   position: fixed;
   top: var(--espacio-4);
-  inset-x: 0;
+  inset-inline: 0;
   z-index: var(--capa-cabecera);
   padding: 0 var(--espacio-4);
   display: flex;
@@ -1030,7 +1030,7 @@
 
 .tarjeta-enfoque-3d__bisel {
   position: absolute;
-  inset-x: 0;
+  inset-inline: 0;
   top: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
@@ -1684,7 +1684,7 @@
 
 .panel-homelab__bisel-superior {
   position: absolute;
-  inset-x: 0;
+  inset-inline: 0;
   top: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.6), transparent);

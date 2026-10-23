@@ -600,10 +600,10 @@
 
         <!-- Filtros Monospaciados de Categoría -->
         <div class="trayectoria-filtros" role="toolbar" aria-label="Filtro de hitos por categoría">
-          <button type="button" class="boton-filtro-trayectoria activo" data-categoria="TODOS">TODOS</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="FORMACIÓN">FORMACIÓN</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="EXPERIENCIA">EXPERIENCIA</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="HOMELAB">HOMELAB</button>
+          <button type="button" class="boton-filtro-trayectoria activo" data-categoria="TODOS" aria-pressed="true">TODOS</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="FORMACIÓN" aria-pressed="false">FORMACIÓN</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="EXPERIENCIA" aria-pressed="false">EXPERIENCIA</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="HOMELAB" aria-pressed="false">HOMELAB</button>
         </div>
       </div>
 
@@ -613,7 +613,7 @@
         <article class="item-linea-tiempo expandido activo" data-tipo="FORMACIÓN" id="hito-somorrostro-ai">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="true" aria-controls="panel-hito-somorrostro-ai">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2026 — 2027</span>
               <span class="etiqueta-badge">ESPECIALIZACIÓN OFICIAL</span>
@@ -632,7 +632,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             Especialización en Inteligencia Artificial y Big Data
@@ -642,7 +642,7 @@
             Implementación de modelos de aprendizaje automático, procesamiento masivo de datos, arquitecturas de IA generativa y despliegue de soluciones inteligentes en entornos industriales y empresariales.
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-somorrostro-ai" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -676,7 +676,7 @@
         <article class="item-linea-tiempo" data-tipo="FORMACIÓN" id="hito-almi-dam">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-almi-dam">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024 — 2026</span>
               <span class="etiqueta-badge">GRADO SUPERIOR · CFGS</span>
@@ -695,7 +695,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)
@@ -705,7 +705,7 @@
             Formación intensiva en ingeniería de software multiplataforma, programación orientada a objetos, acceso a datos relacionales/NoSQL, desarrollo de interfaces y gestión de procesos.
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-almi-dam" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -739,7 +739,7 @@
         <article class="item-linea-tiempo" data-tipo="EXPERIENCIA" id="hito-domax-malta">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-domax-malta">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024</span>
               <span class="etiqueta-badge">INTERNACIONAL · MALTA</span>
@@ -758,7 +758,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             Voice AI &amp; Generación de Contenido Multimedia
@@ -768,7 +768,7 @@
             Especialista en síntesis y generación de voz mediante Inteligencia Artificial para producción multimedia y contenido formativo técnico en español.
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-domax-malta" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -802,7 +802,7 @@
         <article class="item-linea-tiempo" data-tipo="EXPERIENCIA" id="hito-exentia-solutions">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-exentia-solutions">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024</span>
               <span class="etiqueta-badge">DESARROLLO WEB</span>
@@ -821,7 +821,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             Desarrollo Web Frontend &amp; Plataformas Corporativas
@@ -831,7 +831,7 @@
             Desarrollo, maquetación y optimización de plataformas web corporativas enfocadas en rendimiento, adaptabilidad multidispositivo y claridad estructural.
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-exentia-solutions" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -865,7 +865,7 @@
         <article class="item-linea-tiempo activo" data-tipo="HOMELAB" id="hito-homelab-ops">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-homelab-ops">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">CONTINUO</span>
               <span class="etiqueta-badge">I+D PROPIO // LOCAL LAB</span>
@@ -884,7 +884,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             Laboratorio Local / Homelab &amp; Orquestación IA
@@ -894,7 +894,7 @@
             Entorno de servidores locales dedicado a la experimentación continua, orquestación de flujos de trabajo, automatización con scripts y despliegue privado de modelos de lenguaje y pruebas de concepto (PoC).
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-homelab-ops" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -928,7 +928,7 @@
         <article class="item-linea-tiempo" data-tipo="FORMACIÓN" id="hito-almi-smr">
           <span class="item-linea-tiempo__nodo" aria-hidden="true"></span>
 
-          <div class="item-linea-tiempo__cabecera">
+          <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-almi-smr">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2022 — 2024</span>
               <span class="etiqueta-badge">GRADO MEDIO · CFGM</span>
@@ -947,7 +947,7 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-          </div>
+          </button>
 
           <h3 class="item-linea-tiempo__titulo">
             CFGM Sistemas Microinformáticos y Redes (SMR)
@@ -957,7 +957,7 @@
             La base física y lógica de toda mi arquitectura: administración de sistemas operativos, configuración de redes locales, seguridad informática, hardware de servidores y diagnóstico de bajo nivel.
           </p>
 
-          <div class="item-linea-tiempo__panel-expandido">
+          <div id="panel-hito-almi-smr" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
               <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
               <div class="fila-logro">
@@ -1037,7 +1037,7 @@
         </article>
 
         <!-- 02. Java -->
-        <article class="tarjeta-tecnologia" data-descriptor="Java // Arquitectura Multiplataforma (DAM)">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Java" data-descriptor="Java // Arquitectura Multiplataforma (DAM)">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1071,7 +1071,7 @@
         </article>
 
         <!-- 03. JavaScript -->
-        <article class="tarjeta-tecnologia" data-descriptor="JavaScript // Interfaces Interactivas &amp; DOM">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: JavaScript" data-descriptor="JavaScript // Interfaces Interactivas &amp; DOM">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1097,7 +1097,7 @@
         </article>
 
         <!-- 04. PHP -->
-        <article class="tarjeta-tecnologia" data-descriptor="PHP // Desarrollo Backend &amp; Plataformas Web">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: PHP" data-descriptor="PHP // Desarrollo Backend &amp; Plataformas Web">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1125,7 +1125,7 @@
         </article>
 
         <!-- 05. SQL -->
-        <article class="tarjeta-tecnologia" data-descriptor="SQL // Modelado Relacional &amp; Consultas Complejas">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: SQL (Relacional)" data-descriptor="SQL // Modelado Relacional &amp; Consultas Complejas">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1152,7 +1152,7 @@
         </article>
 
         <!-- 06. MongoDB -->
-        <article class="tarjeta-tecnologia" data-descriptor="MongoDB // Modelado NoSQL &amp; Documentos">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: MongoDB" data-descriptor="MongoDB // Modelado NoSQL &amp; Documentos">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1180,7 +1180,7 @@
         </article>
 
         <!-- 07. Linux & Redes -->
-        <article class="tarjeta-tecnologia" data-descriptor="Linux // Administración de Servidores &amp; SMR">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Linux & Redes" data-descriptor="Linux // Administración de Servidores &amp; SMR">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1206,7 +1206,7 @@
         </article>
 
         <!-- 08. Voice AI & GenAI -->
-        <article class="tarjeta-tecnologia" data-descriptor="GenAI // Síntesis Vocal &amp; Orquestación LLM">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Voice AI & GenAI" data-descriptor="GenAI // Síntesis Vocal &amp; Orquestación LLM">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1234,7 +1234,7 @@
         </article>
 
         <!-- 09. HTML5 & CSS3 -->
-        <article class="tarjeta-tecnologia" data-descriptor="HTML5/CSS3 // Maquetación de Precisión">
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: HTML5 & CSS3" data-descriptor="HTML5/CSS3 // Maquetación de Precisión">
           <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
@@ -1328,6 +1328,15 @@
               <div class="log-registro log-registro--ai">[AI] Local LLM &amp; Voice Synthesis Pipeline -&gt; EXPERIMENTING</div>
             </div>
 
+            <!-- Entrada Interactiva de Comandos por Teclado -->
+            <form id="formulario-shell-interactivo" class="consola-shell__formulario-comando" autocomplete="off">
+              <label for="input-comando-shell" class="consola-shell__prompt-linea">
+                <span class="consola-shell__prompt-flecha" aria-hidden="true">&gt;</span>
+              </label>
+              <input type="text" id="input-comando-shell" class="consola-shell__input" placeholder="Teclea un comando (status, ai, stack, ping, whoami, help, clear)..." spellcheck="false" autocomplete="off" aria-label="Comando interactivo homelab">
+              <button type="submit" class="solo-lectores">Ejecutar comando</button>
+            </form>
+
             <div class="consola-shell__acciones-comandos">
               <span class="consola-shell__etiqueta-ejecutar">EJECUTAR:</span>
               <button type="button" class="boton-comando-shell" data-comando="status">status --homelab</button>
@@ -1414,13 +1423,29 @@
           </div>
 
           <form id="formulario-transmision" class="formulario-contacto">
+            <div class="formulario-contacto__fila-doble">
+              <div class="campo-formulario">
+                <label for="contacto-nombre" class="campo-formulario__etiqueta">
+                  NOMBRE / EMPRESA
+                </label>
+                <input type="text" id="contacto-nombre" required placeholder="Tu nombre o empresa..." class="campo-formulario__input" autocomplete="name">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="contacto-email" class="campo-formulario__etiqueta">
+                  CORREO ELECTRÓNICO
+                </label>
+                <input type="email" id="contacto-email" required placeholder="tu.correo@ejemplo.com" class="campo-formulario__input" autocomplete="email">
+              </div>
+            </div>
+
             <div>
-              <span class="campo-formulario__etiqueta">ÁREA DE INTERÉS</span>
-              <div class="grupo-botones-temas" role="radiogroup" aria-label="Seleccione el área de interés">
-                <button type="button" class="boton-tema-interes activo">AUTOMATIZACIÓN &amp; IA</button>
-                <button type="button" class="boton-tema-interes">DESARROLLO SOFTWARE</button>
-                <button type="button" class="boton-tema-interes">VOICE AI / MULTIMEDIA</button>
-                <button type="button" class="boton-tema-interes">SISTEMAS &amp; DATOS</button>
+              <span id="etiqueta-area-interes" class="campo-formulario__etiqueta">ÁREA DE INTERÉS</span>
+              <div class="grupo-botones-temas" role="radiogroup" aria-labelledby="etiqueta-area-interes">
+                <button type="button" class="boton-tema-interes activo" role="radio" aria-checked="true">AUTOMATIZACIÓN &amp; IA</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">DESARROLLO SOFTWARE</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">VOICE AI / MULTIMEDIA</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">SISTEMAS &amp; DATOS</button>
               </div>
             </div>
 
