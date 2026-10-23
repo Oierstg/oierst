@@ -1,3 +1,25 @@
-# Ignorar todos los archivos Markdown en la raíz y en cualquier subdirectorio
+# Archivos de documentación y reportes
 *.md
 **/*.md
+
+# Archivos del sistema operativo y del entorno
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y temporales
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.temp/
+.cache/
+
+# Entornos de desarrollo y editores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

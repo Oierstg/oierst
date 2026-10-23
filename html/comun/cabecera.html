@@ -1,25 +1,30 @@
 <!--
-  COMPONENTE COMÚN: CABECERA Y BARRA DE NAVEGACIÓN FLOTANTE (ESTILO CRISTAL)
-  Oier Santo Tomás Gamayo - Portafolio Interactivo
+  COMPONENTE COMÚN: CABECERA Y BARRA DE NAVEGACIÓN FLOTANTE (ENTERPRISE GRADE)
+  Oier Santo Tomás Gamayo - Portafolio Profesional
   Arquitectura accesible, diseño responsive y navegación optimizada
 -->
 <header class="cabecera-flotante">
   <nav class="navegacion-principal" aria-label="Navegación principal del sitio">
     <!-- Logotipo y Monograma Minimalista -->
     <a href="#hero" class="logotipo enlace-scroll" data-destino="hero" aria-label="Ir al inicio - Oier Santo Tomás">
-      <span class="logotipo__glifo" aria-hidden="true"></span>
+      <span class="logotipo__glifo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </span>
       <span class="logotipo__texto">
-        OIER <span class="logotipo__subtexto">[STG]</span>
+        OIER <span class="logotipo__subtexto">STG</span>
       </span>
     </a>
 
     <!-- Enlaces de Navegación Centrales (Escritorio / Tablet >= 768px) -->
     <div class="navegacion-enlaces" aria-label="Secciones del sitio">
-      <button type="button" class="enlace-navegacion activo" data-destino="hero">00. INICIO</button>
-      <button type="button" class="enlace-navegacion" data-destino="vision">01. VISIÓN</button>
-      <button type="button" class="enlace-navegacion" data-destino="trayectoria">02. TRAYECTORIA</button>
-      <button type="button" class="enlace-navegacion" data-destino="stack">03. STACK</button>
-      <button type="button" class="enlace-navegacion" data-destino="contacto">04. CONTACTO</button>
+      <button type="button" class="enlace-navegacion activo" data-destino="hero">Inicio</button>
+      <button type="button" class="enlace-navegacion" data-destino="vision">Visión</button>
+      <button type="button" class="enlace-navegacion" data-destino="trayectoria">Trayectoria</button>
+      <button type="button" class="enlace-navegacion" data-destino="stack">Stack &amp; Lab</button>
+      <button type="button" class="enlace-navegacion" data-destino="contacto">Contacto</button>
     </div>
 
     <!-- Indicador de Disponibilidad, Control de Audio y Menú Móvil -->
@@ -29,11 +34,11 @@
           <span class="indicador-disponibilidad__onda"></span>
           <span class="indicador-disponibilidad__nucleo"></span>
         </span>
-        <span class="indicador-disponibilidad__texto--largo">[●] DISPONIBLE PARA PROYECTOS // BASAURI, BIZKAIA</span>
-        <span class="indicador-disponibilidad__texto--corto">DISPONIBLE // BIZKAIA</span>
+        <span class="indicador-disponibilidad__texto--largo">Disponible para proyectos · Basauri, Bizkaia</span>
+        <span class="indicador-disponibilidad__texto--corto">Disponible · Bizkaia</span>
       </div>
 
-      <button type="button" id="boton-alternar-audio" class="boton-audio" aria-label="Activar audio cristalino HUD" title="Activar audio cristalino HUD">
+      <button type="button" id="boton-alternar-audio" class="boton-audio" aria-label="Activar retroalimentación sonora sutil" title="Activar retroalimentación sonora sutil">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -59,14 +64,14 @@
   <div id="menu-movil-desplegable" class="menu-movil-desplegable" aria-hidden="true">
     <div class="menu-movil-contenedor">
       <div class="menu-movil-enlaces">
-        <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">00. INICIO</button>
-        <button type="button" class="enlace-navegacion-movil" data-destino="vision">01. VISIÓN</button>
-        <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">02. TRAYECTORIA</button>
-        <button type="button" class="enlace-navegacion-movil" data-destino="stack">03. STACK</button>
-        <button type="button" class="enlace-navegacion-movil" data-destino="contacto">04. CONTACTO</button>
+        <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">Inicio</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="vision">Visión &amp; Arquitectura</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">Trayectoria &amp; Experiencia</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="stack">Stack &amp; Homelab</button>
+        <button type="button" class="enlace-navegacion-movil" data-destino="contacto">Contacto Directo</button>
       </div>
       <div class="menu-movil-pie">
-        <span>SYS.LOC // BASAURI, BIZKAIA [43.2361° N, 2.8883° W]</span>
+        <span>Oier Santo Tomás Gamayo · Basauri, Bizkaia</span>
       </div>
     </div>
   </div>

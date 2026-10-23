@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Oier Santo Tomás Gamayo — Especialista en Integración de Inteligencia Artificial, Automatización de Procesos y Desarrollo Multiplataforma. Perfil híbrido SMR + DAM + IA & Big Data.">
-  <meta name="theme-color" content="#090B0E">
-  <title>Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist</title>
+  <meta name="theme-color" content="#0A0C10">
+  <title>Oier Santo Tomás Gamayo · Especialista en Integración de IA &amp; Desarrollo Multiplataforma</title>
 
   <!-- Metadatos de Redes Sociales (Open Graph y Twitter Cards) -->
-  <meta property="og:title" content="Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist">
-  <meta property="og:description" content="Especialista en Integración de Inteligencia Artificial, Automatización de Procesos y Desarrollo Multiplataforma. Perfil híbrido SMR + DAM + IA & Big Data.">
+  <meta property="og:title" content="Oier Santo Tomás Gamayo · Especialista en IA &amp; Software">
+  <meta property="og:description" content="Integración de Inteligencia Artificial, automatización de procesos y desarrollo de aplicaciones multiplataforma. Perfil técnico híbrido SMR + DAM + IA & Big Data.">
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Oier Santo Tomás Gamayo">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Oier Santo Tomás Gamayo · AI Integration & Multiplatform Specialist">
-  <meta name="twitter:description" content="Automatización de flujos de trabajo, ingeniería de software e inteligencia artificial aplicada.">
+  <meta name="twitter:title" content="Oier Santo Tomás Gamayo · Especialista en IA &amp; Software">
+  <meta name="twitter:description" content="Ingeniería de software, automatización de flujos de trabajo e inteligencia artificial aplicada.">
 
   <!-- Microdatos Semánticos Estructurados Schema.org (JSON-LD) -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
       "name": "Oier Santo Tomás Gamayo",
       "alternateName": "Oier STG",
       "jobTitle": "Especialista en Integración de IA y Desarrollo Multiplataforma",
-      "description": "Perfil técnico híbrido que conecta sistemas microinformáticos y redes (SMR), desarrollo de aplicaciones multiplataforma (DAM) e Inteligencia Artificial & Big Data.",
+      "description": "Perfil técnico híbrido que articula sistemas microinformáticos y redes (SMR), desarrollo de aplicaciones multiplataforma (DAM) e Inteligencia Artificial & Big Data.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Basauri",
@@ -57,17 +57,17 @@
   }
   </script>
 
-  <!-- Fuentes Externas Google Fonts (Preconexión y Carga Directa sin Bloqueo) -->
+  <!-- Fuentes Externas Google Fonts (Preconexión y Carga Asíncrona Optimizada) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
   <!-- Hojas de Estilo en Arquitectura Espejo (Separación Absoluta de Tecnologías) -->
   <link rel="stylesheet" href="../../css/comun/variables.css">
   <link rel="stylesheet" href="../../css/comun/normalizacion.css">
   <link rel="stylesheet" href="../../css/inicio/portafolio.css">
 
-  <!-- Three.js para el Núcleo 3D Interactivo (Carga Asíncrona sin Bloqueo) -->
+  <!-- Three.js para la Visualización 3D Interactiva -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
   <!-- Lógica Frontend Modular -->
@@ -81,57 +81,36 @@
   <!-- Anunciador Dinámico Accesible para Lectores de Pantalla -->
   <div id="anunciador-accesible" class="solo-lectores" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- =========================================================================
-       CAPAS DE FONDO ATMOSFÉRICAS Y MARCAS TÉCNICAS HUD
-       ========================================================================= -->
-  <div class="fondo-rejilla-tecnica" aria-hidden="true"></div>
-  <div class="resplandor-glaciar resplandor-glaciar--superior" aria-hidden="true"></div>
-  <div class="resplandor-glaciar resplandor-glaciar--inferior" aria-hidden="true"></div>
-
-  <!-- Capa de Grano Analógico Film Grain SVG -->
-  <div class="capa-grano-film" aria-hidden="true">
-    <svg aria-hidden="true">
-      <filter id="grano-igloo">
-        <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" stitchTiles="stitch" />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grano-igloo)" />
-    </svg>
+  <!-- Barra de Progreso de Lectura Discreta en el Borde Superior -->
+  <div class="barra-progreso-lectura" aria-hidden="true">
+    <div class="barra-progreso-lectura__indicador" id="hud-profundidad-scroll"></div>
   </div>
 
-  <!-- Marcas Reticulares HUD en las Cuatro Esquinas -->
-  <aside class="marcas-hud" aria-label="Telemetría de coordenadas y estado del sistema">
-    <div class="marcas-hud__esquina marcas-hud__esquina--sup-izq" aria-hidden="true"></div>
-    <div class="marcas-hud__esquina marcas-hud__esquina--sup-der" aria-hidden="true"></div>
-    <div class="marcas-hud__esquina marcas-hud__esquina--inf-izq" aria-hidden="true"></div>
-    <div class="marcas-hud__esquina marcas-hud__esquina--inf-der" aria-hidden="true"></div>
-    <div class="marcas-hud__telemetria-izq">
-      SYS.LOC // BASAURI 43.2361° N, 2.8883° W
-    </div>
-    <div class="marcas-hud__telemetria-der">
-      SCROLL_DEPTH: <span id="hud-profundidad-scroll">0%</span> // WEBGL_ACTIVE
-    </div>
-  </aside>
-
   <!-- =========================================================================
-       A. CABECERA FLOTANTE (NAVBAR CON EFECTO CRISTAL)
+       A. CABECERA FLOTANTE (ESTÁNDAR ENTERPRISE GRADE)
        ========================================================================= -->
   <header class="cabecera-flotante">
     <nav class="navegacion-principal" aria-label="Navegación principal">
-      <!-- Monograma Minimalista a la Izquierda -->
+      <!-- Monograma Técnico Minimalista -->
       <a href="#hero" class="logotipo enlace-scroll" data-destino="hero" aria-label="Inicio - Oier Santo Tomás">
-        <span class="logotipo__glifo" aria-hidden="true"></span>
+        <span class="logotipo__glifo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </span>
         <span class="logotipo__texto">
-          OIER <span class="logotipo__subtexto">[STG]</span>
+          OIER <span class="logotipo__subtexto">STG</span>
         </span>
       </a>
 
-      <!-- Enlaces Centrales con Navegación Suave (Escritorio / Tablet >= 768px) -->
+      <!-- Enlaces Centrales de Navegación -->
       <div class="navegacion-enlaces" aria-label="Secciones del sitio">
-        <button type="button" class="enlace-navegacion activo" data-destino="hero">00. INICIO</button>
-        <button type="button" class="enlace-navegacion" data-destino="vision">01. VISIÓN</button>
-        <button type="button" class="enlace-navegacion" data-destino="trayectoria">02. TRAYECTORIA</button>
-        <button type="button" class="enlace-navegacion" data-destino="stack">03. STACK</button>
-        <button type="button" class="enlace-navegacion" data-destino="contacto">04. CONTACTO</button>
+        <button type="button" class="enlace-navegacion activo" data-destino="hero">Inicio</button>
+        <button type="button" class="enlace-navegacion" data-destino="vision">Visión</button>
+        <button type="button" class="enlace-navegacion" data-destino="trayectoria">Trayectoria</button>
+        <button type="button" class="enlace-navegacion" data-destino="stack">Stack &amp; Lab</button>
+        <button type="button" class="enlace-navegacion" data-destino="contacto">Contacto</button>
       </div>
 
       <!-- Disponibilidad, Control de Audio y Menú Móvil -->
@@ -141,11 +120,11 @@
             <span class="indicador-disponibilidad__onda"></span>
             <span class="indicador-disponibilidad__nucleo"></span>
           </span>
-          <span class="indicador-disponibilidad__texto--largo">[●] DISPONIBLE PARA PROYECTOS // BASAURI, BIZKAIA</span>
-          <span class="indicador-disponibilidad__texto--corto">DISPONIBLE // BIZKAIA</span>
+          <span class="indicador-disponibilidad__texto--largo">Disponible para proyectos · Basauri, Bizkaia</span>
+          <span class="indicador-disponibilidad__texto--corto">Disponible · Bizkaia</span>
         </div>
 
-        <button type="button" id="boton-alternar-audio" class="boton-audio" aria-label="Activar audio cristalino HUD" title="Activar audio cristalino HUD">
+        <button type="button" id="boton-alternar-audio" class="boton-audio" aria-label="Activar retroalimentación sonora sutil" title="Activar retroalimentación sonora sutil">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -171,140 +150,122 @@
     <div id="menu-movil-desplegable" class="menu-movil-desplegable" aria-hidden="true">
       <div class="menu-movil-contenedor">
         <div class="menu-movil-enlaces">
-          <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">00. INICIO</button>
-          <button type="button" class="enlace-navegacion-movil" data-destino="vision">01. VISIÓN</button>
-          <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">02. TRAYECTORIA</button>
-          <button type="button" class="enlace-navegacion-movil" data-destino="stack">03. STACK</button>
-          <button type="button" class="enlace-navegacion-movil" data-destino="contacto">04. CONTACTO</button>
+          <button type="button" class="enlace-navegacion-movil activo" data-destino="hero">Inicio</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="vision">Visión &amp; Arquitectura</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="trayectoria">Trayectoria &amp; Experiencia</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="stack">Stack &amp; Homelab</button>
+          <button type="button" class="enlace-navegacion-movil" data-destino="contacto">Contacto Directo</button>
         </div>
         <div class="menu-movil-pie">
-          <span>SYS.LOC // BASAURI, BIZKAIA [43.2361° N, 2.8883° W]</span>
+          <span>Oier Santo Tomás Gamayo · Basauri, Bizkaia</span>
         </div>
       </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       B. HERO SECTION (NÚCLEO 3D INTERACTIVO - IGLOO CRYO CORE)
+       B. SECCIÓN HERO (EDITORIAL, ESTRUCTURADA Y CON PERSONALIDAD)
        ========================================================================= -->
   <main>
-    <section id="hero" class="seccion-hero" aria-label="Presentación e introducción del núcleo interactivo">
-      <!-- Lienzo Three.js Interactivo a Pantalla Completa -->
-      <div class="contenedor-escena-3d" aria-hidden="true">
-        <div id="contenedor-escena-three" class="lienzo-threejs" aria-label="Núcleo 3D interactivo Three.js"></div>
-      </div>
+    <section id="hero" class="seccion-hero" aria-label="Presentación e introducción profesional">
+      <div class="hero-rejilla-editorial">
+        <!-- Columna Principal: Propuesta de Valor y Contenido -->
+        <div class="hero-columna-contenido">
+          <div class="hero-insignia-perfil">
+            <span class="hero-insignia-perfil__punto" aria-hidden="true"></span>
+            <span>Perfil Técnico Híbrido · SMR + DAM + IA &amp; Big Data</span>
+          </div>
 
-      <!-- Viñeta Gradual para Legibilidad Óptima del Texto -->
-      <div class="vineta-hero" aria-hidden="true"></div>
+          <h1 class="hero-titular">
+            Ingeniería de software, automatización e IA aplicada.
+          </h1>
 
-      <!-- Fila Superior de Telemetría HUD -->
-      <div class="hero-barra-superior">
-        <div class="hero-etiqueta-arquitectura">
-          // AI INTEGRATION &amp; SYSTEM ARCHITECTURE
-        </div>
-        <div class="hero-capas-resumen">
-          SMR + DAM + IA &amp; BIG DATA
-        </div>
-        <div class="hero-telemetria-vivo">
-          <span>MESH_ROT: <span id="telemetria-rotacion">12.4° / 148.2°</span></span>
-          <span aria-hidden="true">|</span>
-          <span>VEC: <span id="telemetria-vector">[0.00, 0.00]</span></span>
-        </div>
-      </div>
+          <p class="hero-descripcion">
+            Soy <strong>Oier Santo Tomás Gamayo</strong>. Integro la administración de infraestructura y redes (<span class="hero-etiqueta-tecnica">SMR</span>), el desarrollo de software multiplataforma (<span class="hero-etiqueta-tecnica">DAM</span>) y la especialización aplicada en <span class="hero-etiqueta-tecnica hero-etiqueta-tecnica--destacada">IA &amp; Big Data</span> para construir sistemas empresariales resilientes, automáticos y de alto rendimiento.
+          </p>
 
-      <!-- Titular Principal y Propuesta de Valor -->
-      <div class="hero-cuerpo">
-        <div class="hero-monograma">
-          <span class="hero-monograma__linea" aria-hidden="true"></span>
-          <span>OIER SANTO TOMÁS GAMAYO // BASAURI, BIZKAIA</span>
-        </div>
-
-        <h1 class="hero-titular">
-          <span>AUTOMATING WORKFLOWS.</span>
-          <span class="hero-titular__linea-degradada">ENGINEERING INTELLIGENCE.</span>
-        </h1>
-
-        <p class="hero-descripcion">
-          <strong>&ldquo;Bridging Systems, Code and Artificial Intelligence&rdquo;.</strong>
-          Perfil híbrido que fusiona la administración de sistemas y redes (<span class="hero-etiqueta-tecnica">SMR</span>),
-          la ingeniería de software multiplataforma (<span class="hero-etiqueta-tecnica">DAM</span>) y la
-          especialización avanzada en <span class="hero-etiqueta-tecnica hero-etiqueta-tecnica--destacada">IA &amp; Big Data</span> para automatizar y escalar
-          entornos empresariales.
-        </p>
-
-        <!-- Botones de Acción Magnéticos -->
-        <div class="hero-acciones">
-          <button type="button" class="boton-magnetico boton-magnetico--primario enlace-scroll" data-destino="vision">
-            <span class="boton-magnetico__foco-cursor" aria-hidden="true"></span>
-            <span class="boton-magnetico__bisel" aria-hidden="true"></span>
-            <span class="boton-magnetico__contenido">
-              <span>EXPLORAR CAPACIDADES</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
-          </button>
-
-          <button type="button" class="boton-magnetico boton-magnetico--secundario enlace-scroll" data-destino="stack">
-            <span class="boton-magnetico__foco-cursor" aria-hidden="true"></span>
-            <span class="boton-magnetico__bisel" aria-hidden="true"></span>
-            <span class="boton-magnetico__contenido">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="4 17 10 11 4 5"></polyline>
-                <line x1="12" y1="19" x2="20" y2="19"></line>
-              </svg>
-              <span>VER MATRIZ &amp; HOMELAB</span>
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Barra Inferior: Conmutador de Shader 3D y Capas Híbridas -->
-      <div class="hero-barra-inferior">
-        <div class="conmutador-modos-render">
-          <span class="conmutador-modos-render__etiqueta">
-            // MODO DE RENDERIZADO WEBGL (ARRASTRA PARA ROTAR EN 3D)
-          </span>
-          <div class="conmutador-modos-render__grupo" role="group" aria-label="Selector de aspecto del núcleo 3D">
-            <button type="button" class="boton-modo-render activo" data-modo="crystal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-              <span>01 // CRYO-CRYSTAL</span>
+          <!-- Acciones Principales -->
+          <div class="hero-acciones">
+            <button type="button" class="boton-magnetico boton-magnetico--primario enlace-scroll" data-destino="vision">
+              <span class="boton-magnetico__contenido">
+                <span>Explorar capacidades</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </button>
 
-            <button type="button" class="boton-modo-render" data-modo="wireframe">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-              </svg>
-              <span>02 // GEODESIC MESH</span>
+            <button type="button" class="boton-magnetico boton-magnetico--secundario enlace-scroll" data-destino="stack">
+              <span class="boton-magnetico__contenido">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <span>Stack &amp; Homelab</span>
+              </span>
             </button>
 
-            <button type="button" class="boton-modo-render" data-modo="overclock">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-              <span>03 // AI PULSE</span>
+            <button type="button" class="boton-magnetico boton-magnetico--terciario enlace-scroll" data-destino="contacto">
+              <span class="boton-magnetico__contenido">
+                <span>Iniciar contacto</span>
+              </span>
             </button>
+          </div>
+
+          <!-- Micro-resumen Arquitectónico de Tres Capas -->
+          <div class="bloque-capas-resumen" aria-label="Estructura de capas técnicas">
+            <div class="columna-capa">
+              <div class="columna-capa__subtitulo">01. INFRAESTRUCTURA</div>
+              <div class="columna-capa__titulo">Sistemas &amp; Redes (SMR)</div>
+            </div>
+            <div class="columna-capa">
+              <div class="columna-capa__subtitulo">02. DESARROLLO</div>
+              <div class="columna-capa__titulo">Software Multiplataforma (DAM)</div>
+            </div>
+            <div class="columna-capa columna-capa--ia">
+              <div class="columna-capa__subtitulo">03. MULTIPLICADOR</div>
+              <div class="columna-capa__titulo">IA Aplicada &amp; Big Data</div>
+            </div>
           </div>
         </div>
 
-        <div class="bloque-capas-resumen" aria-label="Estructura de capas técnicas">
-          <div class="columna-capa">
-            <div class="columna-capa__subtitulo">CAPA 01</div>
-            <div class="columna-capa__titulo">SISTEMAS (SMR)</div>
-          </div>
-          <div class="columna-capa">
-            <div class="columna-capa__subtitulo">CAPA 02</div>
-            <div class="columna-capa__titulo">CÓDIGO (DAM)</div>
-          </div>
-          <div class="columna-capa columna-capa--ia">
-            <div class="columna-capa__subtitulo">CAPA 03</div>
-            <div class="columna-capa__titulo">IA &amp; BIG DATA</div>
+        <!-- Columna Secundaria: Visor 3D Arquitectónico y Modos de Inspección -->
+        <div class="hero-columna-visor">
+          <div class="visor-escena-card">
+            <!-- Barra Superior del Visor -->
+            <div class="visor-escena-card__cabecera">
+              <div class="visor-escena-card__estado">
+                <span class="visor-escena-card__indicador-nodo" aria-hidden="true"></span>
+                <span>Visor Geométrico Interactivo</span>
+              </div>
+              <div class="visor-escena-card__telemetria">
+                <span id="telemetria-rotacion">0.0° / 0.0°</span>
+                <span aria-hidden="true">·</span>
+                <span id="telemetria-vector">[0.00, 0.00]</span>
+              </div>
+            </div>
+
+            <!-- Contenedor del Lienzo WebGL Three.js -->
+            <div class="contenedor-escena-3d" aria-label="Modelo 3D interactivo. Arrastra con el ratón o el dedo para rotar">
+              <div id="contenedor-escena-three" class="lienzo-threejs"></div>
+            </div>
+
+            <!-- Conmutador de Modos de Visualización -->
+            <div class="visor-escena-card__pie">
+              <span class="visor-escena-card__instruccion">Modo de visualización:</span>
+              <div class="conmutador-modos-render" role="group" aria-label="Selector de aspecto del núcleo 3D">
+                <button type="button" class="boton-modo-render activo" data-modo="crystal">
+                  <span>Sólido</span>
+                </button>
+                <button type="button" class="boton-modo-render" data-modo="wireframe">
+                  <span>Malla</span>
+                </button>
+                <button type="button" class="boton-modo-render" data-modo="overclock">
+                  <span>Activo</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -315,21 +276,26 @@
          ======================================================================= -->
     <section id="vision" class="seccion-contenedor" aria-labelledby="titulo-manifiesto">
       <div class="seccion-cabecera">
-        <h2 id="titulo-manifiesto" class="seccion-indicador">
-          01 // MANIFIESTO &amp; ARQUITECTURA HÍBRIDA
-        </h2>
-        <div class="control-iluminacion-manifiesto">
+        <div>
+          <p class="seccion-indicador">01 / FUNDAMENTOS &amp; ARQUITECTURA</p>
+          <h2 id="titulo-manifiesto" class="seccion-titulo">
+            El valor de conectar hardware, código y modelos inteligentes.
+          </h2>
+        </div>
+
+        <!-- Ajuste Sutil de Contraste Tipográfico -->
+        <div class="control-iluminacion-manifiesto" aria-label="Ajuste de contraste de lectura">
           <label for="deslizador-iluminacion" class="control-iluminacion-manifiesto__etiqueta">
-            ILUMINACIÓN DE LECTURA: <span id="porcentaje-iluminacion">35%</span>
+            Contraste: <span id="porcentaje-iluminacion">100%</span>
           </label>
           <div class="control-iluminacion-manifiesto__fila">
-            <input type="range" id="deslizador-iluminacion" min="0.15" max="1" step="0.01" value="0.35" class="control-iluminacion-manifiesto__deslizador" aria-label="Control de iluminación de lectura del manifiesto">
-            <button type="button" id="boton-reinicio-iluminacion" class="boton-reinicio-manifiesto" title="Restablecer iluminación automática por desplazamiento" aria-label="Restablecer iluminación automática por desplazamiento">AUTO</button>
+            <input type="range" id="deslizador-iluminacion" min="0.3" max="1" step="0.05" value="1" class="control-iluminacion-manifiesto__deslizador" aria-label="Control de contraste de lectura">
+            <button type="button" id="boton-reinicio-iluminacion" class="boton-reinicio-manifiesto" title="Restablecer lectura completa" aria-label="Restablecer lectura completa">AUTO</button>
           </div>
         </div>
       </div>
 
-      <!-- Texto con Revelado Progresivo Palabra por Palabra -->
+      <!-- Texto del Manifiesto -->
       <div class="manifiesto-bloque-texto">
         <p id="contenedor-palabras-manifiesto" class="manifiesto-parrafo">
           <span class="palabra-manifiesto">Conecto</span>
@@ -392,56 +358,61 @@
       <div class="cuadricula-capas-sintesis">
         <article class="tarjeta-capa-sintesis">
           <div class="tarjeta-capa-sintesis__cabecera">
-            <span>BASE DE INFRAESTRUCTURA</span>
-            <span class="tarjeta-capa-sintesis__codigo">[SMR]</span>
+            <span class="tarjeta-capa-sintesis__titulo">Base de Infraestructura</span>
+            <span class="tarjeta-capa-sintesis__codigo">SMR</span>
           </div>
           <p class="tarjeta-capa-sintesis__cuerpo">
-            Comprendo qué ocurre debajo del código: administración de sistemas Linux, topologías de red, protocolos y seguridad en servidores físicos y virtualizados.
+            Comprensión profunda de qué ocurre bajo la aplicación: administración de servidores Linux, segmentación de redes TCP/IP, protocolos de comunicación y seguridad física y virtualizada.
           </p>
+          <div class="tarjeta-capa-sintesis__pie">
+            <span>Linux · Networking · Hardware · Virtualización</span>
+          </div>
         </article>
 
         <article class="tarjeta-capa-sintesis">
           <div class="tarjeta-capa-sintesis__cabecera">
-            <span>NÚCLEO DE INGENIERÍA</span>
-            <span class="tarjeta-capa-sintesis__codigo">[DAM]</span>
+            <span class="tarjeta-capa-sintesis__titulo">Núcleo de Ingeniería</span>
+            <span class="tarjeta-capa-sintesis__codigo">DAM</span>
           </div>
           <p class="tarjeta-capa-sintesis__cuerpo">
-            Desarrollo de software estructurado y mantenible en Java, Python, PHP y JavaScript, conectado a motores de persistencia SQL y MongoDB.
+            Construcción de software estructurado, mantenible y escalable con Java, Python, PHP y JavaScript, conectado a motores relacionales (SQL) y documentales (MongoDB).
           </p>
+          <div class="tarjeta-capa-sintesis__pie">
+            <span>Java · Python · PHP · JavaScript · SQL &amp; NoSQL</span>
+          </div>
         </article>
 
         <article class="tarjeta-capa-sintesis tarjeta-capa-sintesis--ia">
           <div class="tarjeta-capa-sintesis__cabecera">
-            <span>CAPA MULTIPLICADORA</span>
-            <span class="tarjeta-capa-sintesis__codigo">[IA &amp; BIG DATA]</span>
+            <span class="tarjeta-capa-sintesis__titulo">Capa Multiplicadora</span>
+            <span class="tarjeta-capa-sintesis__codigo">IA &amp; Big Data</span>
           </div>
           <p class="tarjeta-capa-sintesis__cuerpo">
-            Despliegue de modelos de Inteligencia Artificial, síntesis de voz neuronal (DOMAX) y automatización de flujos de negocio para multiplicar la productividad.
+            Despliegue e inferencia de modelos de lenguaje, flujos de síntesis de voz neuronal (DOMAX) y orquestación de agentes autónomos para elevar la eficiencia operativa de cualquier equipo.
           </p>
+          <div class="tarjeta-capa-sintesis__pie">
+            <span>LLMs · Voice AI · Pipelines ETL · Agentes Autónomos</span>
+          </div>
         </article>
       </div>
 
       <!-- =====================================================================
-           D. ÁREAS DE ENFOQUE TÉCNICO (TARJETAS 3D TILT INTERACTIVAS)
+           D. ÁREAS DE ENFOQUE TÉCNICO
            ===================================================================== -->
       <div class="seccion-enfoque">
         <div class="seccion-enfoque__encabezado">
           <div>
-            <p class="seccion-indicador">// CORE CAPABILITIES &amp; ARCHITECTURE</p>
-            <h3 class="seccion-titulo">Áreas de Enfoque Técnico.</h3>
+            <p class="seccion-indicador">CAPACIDADES TÉCNICAS NUCLEARES</p>
+            <h3 class="seccion-subtitulo">Áreas de Especialización.</h3>
           </div>
-          <p class="seccion-instruccion-cursor">[ INTERACTIVO: INCLINACIÓN 3D AL PASAR EL CURSOR ]</p>
         </div>
 
         <div class="cuadricula-tarjetas-enfoque">
           <!-- Tarjeta 01 -->
           <article class="tarjeta-enfoque-3d" aria-labelledby="titulo-enfoque-01">
-            <div class="tarjeta-enfoque-3d__resplandor-radial" aria-hidden="true"></div>
-            <div class="tarjeta-enfoque-3d__bisel" aria-hidden="true"></div>
-
             <div class="tarjeta-enfoque-3d__contenido-superior">
               <div class="tarjeta-enfoque-3d__cabecera">
-                <span class="tarjeta-enfoque-3d__codigo">01 // AUTOMATIZACIÓN DE PROCESOS</span>
+                <span class="tarjeta-enfoque-3d__codigo">01 · AUTOMATIZACIÓN</span>
                 <div class="tarjeta-enfoque-3d__icono-caja" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="6" height="6" rx="1"></rect>
@@ -453,7 +424,6 @@
                 </div>
               </div>
 
-              <p class="tarjeta-enfoque-3d__subtitulo">AGENTIC WORKFLOWS &amp; PIPELINES</p>
               <h4 id="titulo-enfoque-01" class="tarjeta-enfoque-3d__titulo">Automatización de Procesos &amp; IA</h4>
               <p class="tarjeta-enfoque-3d__descripcion">
                 Diseño de agentes autónomos, pipelines de scripts en Python y optimización de tareas repetitivas mediante modelos de Inteligencia Artificial y flujos orquestados.
@@ -461,26 +431,26 @@
             </div>
 
             <div class="tarjeta-enfoque-3d__pie">
-              <div class="tarjeta-enfoque-3d__metricas">
-                <div class="tarjeta-enfoque-3d__metrica-item">
+              <ul class="tarjeta-enfoque-3d__metricas" aria-label="Aspectos destacados">
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>REDUCCIÓN DE LATENCIA OPERATIVA</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Reducción sistemática de latencia operativa</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>ORQUESTACIÓN LOCAL / API</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Orquestación de pipelines locales y vía API</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>VOICE &amp; GEN-AI PIPELINES</span>
-                </div>
-              </div>
+                  <span>Integración de síntesis vocal y modelos generativos</span>
+                </li>
+              </ul>
 
               <div class="tarjeta-enfoque-3d__etiquetas">
                 <span class="etiqueta-tecnologia-pildora">Python</span>
-                <span class="etiqueta-tecnologia-pildora">GenAI / LLMs</span>
+                <span class="etiqueta-tecnologia-pildora">GenAI &amp; LLMs</span>
                 <span class="etiqueta-tecnologia-pildora">Voice AI</span>
-                <span class="etiqueta-tecnologia-pildora">Bash / Cron</span>
+                <span class="etiqueta-tecnologia-pildora">Bash &amp; Cron</span>
                 <span class="etiqueta-tecnologia-pildora">Webhooks</span>
               </div>
             </div>
@@ -488,12 +458,9 @@
 
           <!-- Tarjeta 02 -->
           <article class="tarjeta-enfoque-3d" aria-labelledby="titulo-enfoque-02">
-            <div class="tarjeta-enfoque-3d__resplandor-radial" aria-hidden="true"></div>
-            <div class="tarjeta-enfoque-3d__bisel" aria-hidden="true"></div>
-
             <div class="tarjeta-enfoque-3d__contenido-superior">
               <div class="tarjeta-enfoque-3d__cabecera">
-                <span class="tarjeta-enfoque-3d__codigo">02 // DESARROLLO MULTIPLATAFORMA</span>
+                <span class="tarjeta-enfoque-3d__codigo">02 · DESARROLLO</span>
                 <div class="tarjeta-enfoque-3d__icono-caja" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="16 18 22 12 16 6"></polyline>
@@ -502,7 +469,6 @@
                 </div>
               </div>
 
-              <p class="tarjeta-enfoque-3d__subtitulo">ROBUST BACKENDS &amp; REACTIVE UI</p>
               <h4 id="titulo-enfoque-02" class="tarjeta-enfoque-3d__titulo">Desarrollo Multiplataforma</h4>
               <p class="tarjeta-enfoque-3d__descripcion">
                 Construcción de interfaces reactivas de alta precisión y arquitecturas backend sólidas con Java, PHP, Python y ecosistema JavaScript moderno.
@@ -510,39 +476,36 @@
             </div>
 
             <div class="tarjeta-enfoque-3d__pie">
-              <div class="tarjeta-enfoque-3d__metricas">
-                <div class="tarjeta-enfoque-3d__metrica-item">
+              <ul class="tarjeta-enfoque-3d__metricas" aria-label="Aspectos destacados">
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>ARQUITECTURA ESCALABLE (DAM)</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Arquitectura orientada a objetos modular (DAM)</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>INTERFACES DE ALTO IMPACTO</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Interfaces empresariales accesibles (WCAG AA)</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>INTEGRACIÓN DE SISTEMAS</span>
-                </div>
-              </div>
+                  <span>Integración de APIs y lógica de servidor</span>
+                </li>
+              </ul>
 
               <div class="tarjeta-enfoque-3d__etiquetas">
                 <span class="etiqueta-tecnologia-pildora">Java</span>
                 <span class="etiqueta-tecnologia-pildora">JavaScript</span>
                 <span class="etiqueta-tecnologia-pildora">PHP</span>
                 <span class="etiqueta-tecnologia-pildora">Python</span>
-                <span class="etiqueta-tecnologia-pildora">HTML5 / CSS3</span>
+                <span class="etiqueta-tecnologia-pildora">HTML5 &amp; CSS3</span>
               </div>
             </div>
           </article>
 
           <!-- Tarjeta 03 -->
           <article class="tarjeta-enfoque-3d" aria-labelledby="titulo-enfoque-03">
-            <div class="tarjeta-enfoque-3d__resplandor-radial" aria-hidden="true"></div>
-            <div class="tarjeta-enfoque-3d__bisel" aria-hidden="true"></div>
-
             <div class="tarjeta-enfoque-3d__contenido-superior">
               <div class="tarjeta-enfoque-3d__cabecera">
-                <span class="tarjeta-enfoque-3d__codigo">03 // INFRAESTRUCTURA &amp; DATOS</span>
+                <span class="tarjeta-enfoque-3d__codigo">03 · INFRAESTRUCTURA</span>
                 <div class="tarjeta-enfoque-3d__icono-caja" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
@@ -552,34 +515,33 @@
                 </div>
               </div>
 
-              <p class="tarjeta-enfoque-3d__subtitulo">HYBRID PERSISTENCE &amp; HOMELAB OPS</p>
               <h4 id="titulo-enfoque-03" class="tarjeta-enfoque-3d__titulo">Infraestructura, Redes &amp; Datos</h4>
               <p class="tarjeta-enfoque-3d__descripcion">
-                Modelado híbrido en bases de datos relacionales (SQL) y documentales (NoSQL), junto con administración de servidores Linux y despliegues en laboratorio local.
+                Modelado de datos híbrido en bases relacionales (SQL) y documentales (NoSQL), junto con administración de servidores Linux y entornos homelab.
               </p>
             </div>
 
             <div class="tarjeta-enfoque-3d__pie">
-              <div class="tarjeta-enfoque-3d__metricas">
-                <div class="tarjeta-enfoque-3d__metrica-item">
+              <ul class="tarjeta-enfoque-3d__metricas" aria-label="Aspectos destacados">
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>MODELADO SQL &amp; MONGODB</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Modelado estructurado SQL y esquemas MongoDB</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>SERVIDORES LINUX &amp; REDES (SMR)</span>
-                </div>
-                <div class="tarjeta-enfoque-3d__metrica-item">
+                  <span>Administración de Linux Server y redes TCP/IP</span>
+                </li>
+                <li class="tarjeta-enfoque-3d__metrica-item">
                   <span class="tarjeta-enfoque-3d__metrica-punto" aria-hidden="true"></span>
-                  <span>HOMELAB SELF-HOSTED</span>
-                </div>
-              </div>
+                  <span>Entorno de experimentación homelab autogestionado</span>
+                </li>
+              </ul>
 
               <div class="tarjeta-enfoque-3d__etiquetas">
                 <span class="etiqueta-tecnologia-pildora">SQL</span>
                 <span class="etiqueta-tecnologia-pildora">MongoDB</span>
                 <span class="etiqueta-tecnologia-pildora">Linux Server</span>
-                <span class="etiqueta-tecnologia-pildora">Networking</span>
+                <span class="etiqueta-tecnologia-pildora">TCP/IP</span>
                 <span class="etiqueta-tecnologia-pildora">Virtualización</span>
               </div>
             </div>
@@ -594,20 +556,22 @@
     <section id="trayectoria" class="seccion-contenedor seccion-trayectoria" aria-labelledby="titulo-trayectoria">
       <div class="seccion-cabecera">
         <div>
-          <p class="seccion-indicador">02 // CHRONOLOGICAL LOG &amp; MILESTONES</p>
-          <h2 id="titulo-trayectoria" class="seccion-titulo">Trayectoria &amp; Experiencia.</h2>
+          <p class="seccion-indicador">02 / TRAYECTORIA Y EXPERIENCIA</p>
+          <h2 id="titulo-trayectoria" class="seccion-titulo">
+            Formación técnica, experiencia e investigación propia.
+          </h2>
         </div>
 
-        <!-- Filtros Monospaciados de Categoría -->
+        <!-- Filtros de Categoría -->
         <div class="trayectoria-filtros" role="toolbar" aria-label="Filtro de hitos por categoría">
-          <button type="button" class="boton-filtro-trayectoria activo" data-categoria="TODOS" aria-pressed="true">TODOS</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="FORMACIÓN" aria-pressed="false">FORMACIÓN</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="EXPERIENCIA" aria-pressed="false">EXPERIENCIA</button>
-          <button type="button" class="boton-filtro-trayectoria" data-categoria="HOMELAB" aria-pressed="false">HOMELAB</button>
+          <button type="button" class="boton-filtro-trayectoria activo" data-categoria="TODOS" aria-pressed="true">Todos</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="FORMACIÓN" aria-pressed="false">Formación</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="EXPERIENCIA" aria-pressed="false">Experiencia</button>
+          <button type="button" class="boton-filtro-trayectoria" data-categoria="HOMELAB" aria-pressed="false">Homelab</button>
         </div>
       </div>
 
-      <!-- Línea de Tiempo Vertical con Nodos Luminosos -->
+      <!-- Línea de Tiempo Vertical Estructurada -->
       <div class="linea-tiempo">
         <!-- Hito 1: Somorrostro IA -->
         <article class="item-linea-tiempo expandido activo" data-tipo="FORMACIÓN" id="hito-somorrostro-ai">
@@ -616,7 +580,7 @@
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="true" aria-controls="panel-hito-somorrostro-ai">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2026 — 2027</span>
-              <span class="etiqueta-badge">ESPECIALIZACIÓN OFICIAL</span>
+              <span class="etiqueta-badge">Especialización Oficial</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -627,9 +591,9 @@
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">OCULTAR DETALLES</span>
+              <span class="item-linea-tiempo__accion-texto">Ocultar</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
@@ -644,10 +608,10 @@
 
           <div id="panel-hito-somorrostro-ai" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Ingeniería de datos, pipelines ETL y análisis predictivo a escala.</span>
+                <span>Ingeniería de datos, pipelines ETL y análisis predictivo a escala empresarial.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
@@ -655,12 +619,12 @@
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Optimización y evaluación de modelos de IA orientados a producción.</span>
+                <span>Optimización, calibración y evaluación de modelos de IA orientados a entornos de producción.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">AI Engineering</span>
                 <span class="etiqueta-tecnologia-pildora">Big Data</span>
@@ -679,7 +643,7 @@
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-almi-dam">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024 — 2026</span>
-              <span class="etiqueta-badge">GRADO SUPERIOR · CFGS</span>
+              <span class="etiqueta-badge">Grado Superior · CFGS</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -690,9 +654,9 @@
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">INSPECCIONAR NODO</span>
+              <span class="item-linea-tiempo__accion-texto">Detalles</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
@@ -702,34 +666,34 @@
             <span class="item-linea-tiempo__institucion">· Centro de Estudios Almi</span>
           </h3>
           <p class="item-linea-tiempo__resumen">
-            Formación intensiva en ingeniería de software multiplataforma, programación orientada a objetos, acceso a datos relacionales/NoSQL, desarrollo de interfaces y gestión de procesos.
+            Formación intensiva en ingeniería de software multiplataforma, programación orientada a objetos, acceso a datos relacionales y NoSQL, desarrollo de interfaces y gestión de procesos.
           </p>
 
           <div id="panel-hito-almi-dam" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Desarrollo de software robusto con Java, Python y arquitecturas cliente-servidor.</span>
+                <span>Desarrollo de software robusto con Java, Python y arquitecturas cliente-servidor estructuradas.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
-                <span>Diseño e implementación de bases de datos SQL y MongoDB.</span>
+                <span>Diseño e implementación de bases de datos relacionales SQL y colecciones MongoDB.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Programación de servicios, concurrencia y despliegue de aplicaciones corporativas.</span>
+                <span>Programación concurrente, consumo de APIs REST y despliegue multiplataforma.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">Java</span>
                 <span class="etiqueta-tecnologia-pildora">SQL</span>
                 <span class="etiqueta-tecnologia-pildora">MongoDB</span>
                 <span class="etiqueta-tecnologia-pildora">Arquitectura DAM</span>
-                <span class="etiqueta-tecnologia-pildora">APIs</span>
+                <span class="etiqueta-tecnologia-pildora">APIs REST</span>
               </div>
             </div>
           </div>
@@ -742,20 +706,20 @@
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-domax-malta">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024</span>
-              <span class="etiqueta-badge">INTERNACIONAL · MALTA</span>
+              <span class="etiqueta-badge">Proyecto Internacional · Malta</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                Malta (Proyecto Internacional)
+                Malta
               </span>
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">INSPECCIONAR NODO</span>
+              <span class="item-linea-tiempo__accion-texto">Detalles</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
@@ -770,10 +734,10 @@
 
           <div id="panel-hito-domax-malta" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Diseño de flujos de síntesis vocal neuronal con control de prosodia, timbre y naturalidad.</span>
+                <span>Diseño de flujos de síntesis vocal neuronal con control de prosodia, timbre y naturalidad acústica.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
@@ -781,18 +745,17 @@
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Estandarización de calidad acústica para módulos de e-learning de alcance internacional.</span>
+                <span>Estandarización de calidad de audio para módulos formativos e-learning de alcance global.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">Voice AI</span>
                 <span class="etiqueta-tecnologia-pildora">GenAI Audio</span>
                 <span class="etiqueta-tecnologia-pildora">Multimedia Pipelines</span>
                 <span class="etiqueta-tecnologia-pildora">Automatización</span>
-                <span class="etiqueta-tecnologia-pildora">Malta</span>
               </div>
             </div>
           </div>
@@ -805,7 +768,7 @@
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-exentia-solutions">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2024</span>
-              <span class="etiqueta-badge">DESARROLLO WEB</span>
+              <span class="etiqueta-badge">Desarrollo Web</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -816,9 +779,9 @@
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">INSPECCIONAR NODO</span>
+              <span class="item-linea-tiempo__accion-texto">Detalles</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
@@ -833,29 +796,29 @@
 
           <div id="panel-hito-exentia-solutions" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Construcción de interfaces semánticas y responsivas con HTML5, CSS3 y JavaScript.</span>
+                <span>Construcción de interfaces semánticas y responsivas con HTML5, CSS3 y JavaScript moderno.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
-                <span>Optimización de tiempos de carga, estructura DOM y experiencia de usuario.</span>
+                <span>Optimización de tiempos de carga, accesibilidad y experiencia de usuario en producción.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Colaboración directa en entornos de producción real para clientes empresariales.</span>
+                <span>Colaboración en entornos de desarrollo real con estándares técnicos empresariales.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">HTML5</span>
                 <span class="etiqueta-tecnologia-pildora">CSS3</span>
                 <span class="etiqueta-tecnologia-pildora">JavaScript</span>
                 <span class="etiqueta-tecnologia-pildora">Responsive UI</span>
-                <span class="etiqueta-tecnologia-pildora">Web Performance</span>
+                <span class="etiqueta-tecnologia-pildora">Performance</span>
               </div>
             </div>
           </div>
@@ -867,8 +830,8 @@
 
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-homelab-ops">
             <div class="item-linea-tiempo__metadatos">
-              <span class="etiqueta-periodo">CONTINUO</span>
-              <span class="etiqueta-badge">I+D PROPIO // LOCAL LAB</span>
+              <span class="etiqueta-periodo">Continuo</span>
+              <span class="etiqueta-badge">I+D Propio · Local Lab</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -879,45 +842,45 @@
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">INSPECCIONAR NODO</span>
+              <span class="item-linea-tiempo__accion-texto">Detalles</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
 
           <h3 class="item-linea-tiempo__titulo">
-            Laboratorio Local / Homelab &amp; Orquestación IA
+            Laboratorio Local / Homelab &amp; Orquestación de IA
             <span class="item-linea-tiempo__institucion">· Infraestructura Propia</span>
           </h3>
           <p class="item-linea-tiempo__resumen">
-            Entorno de servidores locales dedicado a la experimentación continua, orquestación de flujos de trabajo, automatización con scripts y despliegue privado de modelos de lenguaje y pruebas de concepto (PoC).
+            Entorno de servidores locales dedicado a la experimentación continua, orquestación de flujos de trabajo, automatización con scripts y despliegue privado de modelos de lenguaje y pruebas de concepto.
           </p>
 
           <div id="panel-hito-homelab-ops" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Administración de servidores Linux locales, redes segmentadas y servicios contenerizados.</span>
+                <span>Administración de servidores Linux locales, segmentación de redes y servicios contenerizados.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
-                <span>Ejecución de inferencia local de LLMs y pipelines de automatización sin dependencia cloud.</span>
+                <span>Ejecución de inferencia local de LLMs y flujos de automatización sin dependencia de servicios externos.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Monitoreo de telemetría, copias de seguridad automatizadas y laboratorio de pruebas.</span>
+                <span>Copias de seguridad automatizadas, pruebas de integración y telemetría de rendimiento.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">Linux Server</span>
                 <span class="etiqueta-tecnologia-pildora">Local LLMs</span>
-                <span class="etiqueta-tecnologia-pildora">Bash / Python Scripts</span>
-                <span class="etiqueta-tecnologia-pildora">Workflow Orchestration</span>
+                <span class="etiqueta-tecnologia-pildora">Python &amp; Bash</span>
+                <span class="etiqueta-tecnologia-pildora">Orquestación</span>
                 <span class="etiqueta-tecnologia-pildora">Self-Hosted</span>
               </div>
             </div>
@@ -931,7 +894,7 @@
           <button type="button" class="item-linea-tiempo__cabecera" aria-expanded="false" aria-controls="panel-hito-almi-smr">
             <div class="item-linea-tiempo__metadatos">
               <span class="etiqueta-periodo">2022 — 2024</span>
-              <span class="etiqueta-badge">GRADO MEDIO · CFGM</span>
+              <span class="etiqueta-badge">Grado Medio · CFGM</span>
               <span class="etiqueta-ubicacion">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -942,9 +905,9 @@
             </div>
 
             <div class="item-linea-tiempo__accion">
-              <span class="item-linea-tiempo__accion-texto">INSPECCIONAR NODO</span>
+              <span class="item-linea-tiempo__accion-texto">Detalles</span>
               <svg class="item-linea-tiempo__flecha-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </div>
           </button>
@@ -959,29 +922,29 @@
 
           <div id="panel-hito-almi-smr" class="item-linea-tiempo__panel-expandido">
             <div class="panel-logros">
-              <div class="panel-logros__encabezado">// ESPECIFICACIONES &amp; LOGROS CLAVE</div>
+              <div class="panel-logros__encabezado">Logros clave y enfoque técnico:</div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">01.</span>
-                <span>Despliegue y administración de sistemas Linux y entornos de red empresariales.</span>
+                <span>Despliegue y administración de sistemas Linux y entornos de red locales y empresariales.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">02.</span>
-                <span>Seguridad perimetral, servicios de red (DNS, DHCP, SSH, HTTP) y virtualización.</span>
+                <span>Configuración de servicios de red (DNS, DHCP, SSH, HTTP), cortafuegos y virtualización.</span>
               </div>
               <div class="fila-logro">
                 <span class="fila-logro__indice">03.</span>
-                <span>Visión integral de cómo el código interactúa con el hardware y la red subyacente.</span>
+                <span>Comprensión del funcionamiento íntimo del hardware para optimizar software en producción.</span>
               </div>
             </div>
 
             <div class="panel-tecnologias-asociadas">
-              <div class="panel-tecnologias-asociadas__encabezado">TECNOLOGÍAS ASOCIADAS</div>
+              <div class="panel-tecnologias-asociadas__encabezado">Tecnologías asociadas:</div>
               <div class="panel-tecnologias-asociadas__lista">
                 <span class="etiqueta-tecnologia-pildora">Linux</span>
                 <span class="etiqueta-tecnologia-pildora">Redes TCP/IP</span>
-                <span class="etiqueta-tecnologia-pildora">Sistemas</span>
                 <span class="etiqueta-tecnologia-pildora">Seguridad</span>
                 <span class="etiqueta-tecnologia-pildora">Hardware</span>
+                <span class="etiqueta-tecnologia-pildora">Virtualización</span>
               </div>
             </div>
           </div>
@@ -995,8 +958,8 @@
     <section id="stack" class="seccion-contenedor seccion-matriz" aria-labelledby="titulo-matriz">
       <div class="seccion-cabecera">
         <div>
-          <p class="seccion-indicador">03 // TECHNICAL MATRIX &amp; HOMELAB TELEMETRY</p>
-          <h2 id="titulo-matriz" class="seccion-titulo">Matriz de Tecnologías.</h2>
+          <p class="seccion-indicador">03 / ECOSISTEMA TÉCNICO &amp; LABORATORIO</p>
+          <h2 id="titulo-matriz" class="seccion-titulo">Matriz de Competencias &amp; Homelab.</h2>
         </div>
 
         <!-- Inspector Activo Superior -->
@@ -1011,8 +974,7 @@
       <!-- Cuadrícula de 9 Nodos Tecnológicos -->
       <div class="cuadricula-tecnologias">
         <!-- 01. Python -->
-        <article class="tarjeta-tecnologia seleccionada" data-descriptor="Python // Automatización, Scripts &amp; IA">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia seleccionada" data-descriptor="Python // Automatización, Scripts &amp; IA" tabindex="0" role="button" aria-label="Inspeccionar competencia: Python">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1021,24 +983,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">CORE &amp; AI</span>
-              <span class="tarjeta-tecnologia__codigo">[PY_3.12]</span>
+              <span class="tarjeta-tecnologia__categoria">Core &amp; IA</span>
+              <span class="tarjeta-tecnologia__codigo">v3.12</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">Python</h3>
-          <p class="tarjeta-tecnologia__descriptor">Python // Automatización, Scripts &amp; IA</p>
+          <p class="tarjeta-tecnologia__descriptor">Automatización, pipelines de datos e IA</p>
           <p class="tarjeta-tecnologia__detalle">
-            Desarrollo de pipelines de datos, agentes de automatización, scraping e integración con modelos de IA.
+            Desarrollo de pipelines de datos, agentes de automatización, integración con LLMs y extracción estructurada.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">95%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--95"></div>
           </div>
         </article>
 
         <!-- 02. Java -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Java" data-descriptor="Java // Arquitectura Multiplataforma (DAM)">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: Java" data-descriptor="Java // Arquitectura Multiplataforma (DAM)">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1055,24 +1015,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">DEVELOPMENT</span>
-              <span class="tarjeta-tecnologia__codigo">[JVM_LTS]</span>
+              <span class="tarjeta-tecnologia__categoria">Desarrollo</span>
+              <span class="tarjeta-tecnologia__codigo">JVM LTS</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">Java</h3>
-          <p class="tarjeta-tecnologia__descriptor">Java // Arquitectura Multiplataforma (DAM)</p>
+          <p class="tarjeta-tecnologia__descriptor">Arquitectura orientada a objetos (DAM)</p>
           <p class="tarjeta-tecnologia__detalle">
-            Programación orientada a objetos sólida, aplicaciones de escritorio/servidor y lógica empresarial.
+            Programación orientada a objetos sólida, lógica de negocio robusta, concurrencia y persistencia empresarial.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">90%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--90"></div>
           </div>
         </article>
 
         <!-- 03. JavaScript -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: JavaScript" data-descriptor="JavaScript // Interfaces Interactivas &amp; DOM">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: JavaScript" data-descriptor="JavaScript // Interfaces Interactivas &amp; DOM">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1081,24 +1039,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">FRONTEND &amp; WEB</span>
-              <span class="tarjeta-tecnologia__codigo">[ES_NEXT]</span>
+              <span class="tarjeta-tecnologia__categoria">Frontend &amp; Web</span>
+              <span class="tarjeta-tecnologia__codigo">ES6+</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">JavaScript</h3>
-          <p class="tarjeta-tecnologia__descriptor">JavaScript // Interfaces Interactivas &amp; DOM</p>
+          <p class="tarjeta-tecnologia__descriptor">Interfaces dinámicas y lógica cliente</p>
           <p class="tarjeta-tecnologia__detalle">
-            Desarrollo de experiencias web dinámicas, consumo de APIs asíncronas y lógica de cliente moderna.
+            Desarrollo frontend moderno sin frameworks pesados, manipulación segura del DOM y consumo asíncrono de APIs.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">92%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--92"></div>
           </div>
         </article>
 
         <!-- 04. PHP -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: PHP" data-descriptor="PHP // Desarrollo Backend &amp; Plataformas Web">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: PHP" data-descriptor="PHP // Desarrollo Backend &amp; Plataformas Web">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1109,24 +1065,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">BACKEND</span>
-              <span class="tarjeta-tecnologia__codigo">[PHP_8.X]</span>
+              <span class="tarjeta-tecnologia__categoria">Backend</span>
+              <span class="tarjeta-tecnologia__codigo">v8.x</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">PHP</h3>
-          <p class="tarjeta-tecnologia__descriptor">PHP // Desarrollo Backend &amp; Plataformas Web</p>
+          <p class="tarjeta-tecnologia__descriptor">Servidor y aplicaciones web dinámicas</p>
           <p class="tarjeta-tecnologia__detalle">
-            Lógica de servidor, integración con bases de datos relacionales y sistemas de gestión web.
+            Lógica del lado del servidor, controladores, integración con bases relacionales y plataformas web corporativas.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">85%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--85"></div>
           </div>
         </article>
 
         <!-- 05. SQL -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: SQL (Relacional)" data-descriptor="SQL // Modelado Relacional &amp; Consultas Complejas">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: SQL (Relacional)" data-descriptor="SQL // Modelado Relacional &amp; Consultas Complejas">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1136,24 +1090,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">DATA LAYER</span>
-              <span class="tarjeta-tecnologia__codigo">[RDBMS]</span>
+              <span class="tarjeta-tecnologia__categoria">Bases de Datos</span>
+              <span class="tarjeta-tecnologia__codigo">RDBMS</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">SQL (Relacional)</h3>
-          <p class="tarjeta-tecnologia__descriptor">SQL // Modelado Relacional &amp; Consultas Complejas</p>
+          <p class="tarjeta-tecnologia__descriptor">Modelado de datos e integridad referencial</p>
           <p class="tarjeta-tecnologia__detalle">
-            Diseño de esquemas normalizados, integridad referencial, triggers y optimización de consultas.
+            Diseño de esquemas normalizados, optimización de consultas, transacciones seguras y procedimientos almacenados.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">92%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--92"></div>
           </div>
         </article>
 
         <!-- 06. MongoDB -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: MongoDB" data-descriptor="MongoDB // Modelado NoSQL &amp; Documentos">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: MongoDB" data-descriptor="MongoDB // Modelado NoSQL &amp; Documentos">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1164,24 +1116,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">DATA LAYER</span>
-              <span class="tarjeta-tecnologia__codigo">[NOSQL_DOC]</span>
+              <span class="tarjeta-tecnologia__categoria">Bases de Datos</span>
+              <span class="tarjeta-tecnologia__codigo">NoSQL</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">MongoDB</h3>
-          <p class="tarjeta-tecnologia__descriptor">MongoDB // Modelado NoSQL &amp; Documentos</p>
+          <p class="tarjeta-tecnologia__descriptor">Modelado documental y registros flexibles</p>
           <p class="tarjeta-tecnologia__detalle">
-            Estructuras de datos flexibles de alta velocidad para aplicaciones modernas y logs de IA.
+            Estructuras JSON/BSON escalables, indexación de alta velocidad para logs, telemetría y proyectos modernos.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">88%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--88"></div>
           </div>
         </article>
 
         <!-- 07. Linux & Redes -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Linux & Redes" data-descriptor="Linux // Administración de Servidores &amp; SMR">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: Linux & Redes" data-descriptor="Linux // Administración de Servidores &amp; SMR">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1190,24 +1140,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">INFRASTRUCTURE</span>
-              <span class="tarjeta-tecnologia__codigo">[KERNEL_OPS]</span>
+              <span class="tarjeta-tecnologia__categoria">Sistemas</span>
+              <span class="tarjeta-tecnologia__codigo">SMR</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">Linux &amp; Redes</h3>
-          <p class="tarjeta-tecnologia__descriptor">Linux // Administración de Servidores &amp; SMR</p>
+          <p class="tarjeta-tecnologia__descriptor">Administración de servidores y topologías</p>
           <p class="tarjeta-tecnologia__detalle">
-            Gestión de servidores vía terminal, permisos, demonios systemd, redes TCP/IP y hardening.
+            Configuración y mantenimiento de sistemas Linux vía terminal, demonios systemd, redes TCP/IP y hardening de seguridad.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">94%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--94"></div>
           </div>
         </article>
 
         <!-- 08. Voice AI & GenAI -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: Voice AI & GenAI" data-descriptor="GenAI // Síntesis Vocal &amp; Orquestación LLM">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: Voice AI & GenAI" data-descriptor="GenAI // Síntesis Vocal &amp; Orquestación LLM">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1218,24 +1166,22 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">ARTIFICIAL INTELLIGENCE</span>
-              <span class="tarjeta-tecnologia__codigo">[NEURAL_IO]</span>
+              <span class="tarjeta-tecnologia__categoria">Inteligencia Artificial</span>
+              <span class="tarjeta-tecnologia__codigo">Neural IO</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">Voice AI &amp; GenAI</h3>
-          <p class="tarjeta-tecnologia__descriptor">GenAI // Síntesis Vocal &amp; Orquestación LLM</p>
+          <p class="tarjeta-tecnologia__descriptor">Síntesis vocal y orquestación de modelos</p>
           <p class="tarjeta-tecnologia__detalle">
-            Producción multimedia asistida por IA (DOMAX), ingeniería de prompts y despliegue de modelos.
+            Producción multimedia asistida por IA (DOMAX), ingeniería de prompts estructurados e inferencia privada.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">96%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--96"></div>
           </div>
         </article>
 
         <!-- 09. HTML5 & CSS3 -->
-        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia técnica: HTML5 & CSS3" data-descriptor="HTML5/CSS3 // Maquetación de Precisión">
-          <div class="tarjeta-tecnologia__foco-cursor" aria-hidden="true"></div>
+        <article class="tarjeta-tecnologia" tabindex="0" role="button" aria-label="Inspeccionar competencia: HTML5 & CSS3" data-descriptor="HTML5/CSS3 // Maquetación de Precisión">
           <div class="tarjeta-tecnologia__cabecera">
             <div class="tarjeta-tecnologia__icono-caja" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1245,28 +1191,25 @@
               </svg>
             </div>
             <div class="tarjeta-tecnologia__clasificacion">
-              <span class="tarjeta-tecnologia__categoria">FRONTEND &amp; UI</span>
-              <span class="tarjeta-tecnologia__codigo">[UI_CORE]</span>
+              <span class="tarjeta-tecnologia__categoria">Frontend</span>
+              <span class="tarjeta-tecnologia__codigo">CSS Grid</span>
             </div>
           </div>
           <h3 class="tarjeta-tecnologia__nombre">HTML5 &amp; CSS3</h3>
-          <p class="tarjeta-tecnologia__descriptor">HTML5/CSS3 // Maquetación de Precisión</p>
+          <p class="tarjeta-tecnologia__descriptor">Arquitectura semántica y diseño accesible</p>
           <p class="tarjeta-tecnologia__detalle">
-            Arquitectura semántica, layouts responsivos avanzados y sistemas de diseño corporativos (Exentia).
+            Maquetación corporativa estructurada, CSS Grid nativo, Flexbox estricto y cumplimiento de accesibilidad WCAG AA.
           </p>
           <div class="tarjeta-tecnologia__barra-capacidad">
-            <span class="tarjeta-tecnologia__etiqueta-capacidad">OPERATIONAL_INDEX</span>
-            <span class="tarjeta-tecnologia__valor-capacidad">95%</span>
+            <div class="tarjeta-tecnologia__progreso tarjeta-tecnologia__progreso--95"></div>
           </div>
         </article>
       </div>
 
-      <!-- Tarjeta Especial: "HOMELAB STATUS" & TELEMETRÍA EN VIVO -->
+      <!-- Tarjeta: TELEMETRÍA HOMELAB & TERMINAL SHELL INTERACTIVA -->
       <div class="panel-homelab" aria-labelledby="titulo-homelab">
-        <div class="panel-homelab__bisel-superior" aria-hidden="true"></div>
-
         <div class="panel-homelab__cuadricula">
-          <!-- Columna Izquierda: Indicadores Oficiales -->
+          <!-- Columna Izquierda: Indicadores de Infraestructura -->
           <div class="homelab-telemetria-columna">
             <div class="homelab-telemetria-cabecera">
               <div class="homelab-telemetria-identificador">
@@ -1275,35 +1218,35 @@
                   <span class="homelab-telemetria-identificador__nucleo"></span>
                 </span>
                 <span id="titulo-homelab" class="homelab-telemetria-identificador__texto">
-                  HOMELAB STATUS // TELEMETRY
+                  Servidor Local · Basauri Node
                 </span>
               </div>
-              <span class="homelab-telemetria-insignia">LIVE NODE</span>
+              <span class="homelab-telemetria-insignia">Activo</span>
             </div>
 
             <p class="homelab-telemetria-descripcion">
-              Entorno de pruebas y servidores locales en Basauri para orquestación de flujos de trabajo, automatización con scripts y despliegue de modelos de lenguaje (PoC).
+              Laboratorio privado sobre Linux para experimentación continua, orquestación de agentes, pruebas de concepto con LLMs locales y despliegue de microservicios.
             </p>
 
             <div class="homelab-bloques-indicadores">
               <div class="indicador-homelab-caja">
-                <div class="indicador-homelab-caja__etiqueta">UPTIME</div>
+                <div class="indicador-homelab-caja__etiqueta">Disponibilidad</div>
                 <div class="indicador-homelab-caja__valor">99.9%</div>
               </div>
               <div class="indicador-homelab-caja">
-                <div class="indicador-homelab-caja__etiqueta">ENVIRONMENT</div>
-                <div class="indicador-homelab-caja__valor indicador-homelab-caja__valor--blanco">LOCAL SERVER</div>
+                <div class="indicador-homelab-caja__etiqueta">Entorno</div>
+                <div class="indicador-homelab-caja__valor indicador-homelab-caja__valor--blanco">Linux Local</div>
               </div>
-              <div class="indicador-homelab-caja indicador-homelab-caja--destacada">
-                <div class="indicador-homelab-caja__etiqueta">STATE</div>
-                <div class="indicador-homelab-caja__valor indicador-homelab-caja__valor--acento">EXPERIMENTING</div>
+              <div class="indicador-homelab-caja">
+                <div class="indicador-homelab-caja__etiqueta">Estado</div>
+                <div class="indicador-homelab-caja__valor indicador-homelab-caja__valor--acento">Operativo</div>
               </div>
             </div>
 
             <div class="homelab-metricas-en-linea">
-              <span>CPU_LOAD: <strong id="metrica-homelab-cpu">24%</strong></span>
-              <span>VRAM_ALLOC: <strong id="metrica-homelab-vram">6.4 GB</strong></span>
-              <span>PING: <strong id="metrica-homelab-ping">12ms</strong></span>
+              <span>CPU: <strong id="metrica-homelab-cpu">24%</strong></span>
+              <span>VRAM: <strong id="metrica-homelab-vram">6.4 GB</strong></span>
+              <span>Latencia: <strong id="metrica-homelab-ping">12ms</strong></span>
             </div>
           </div>
 
@@ -1314,7 +1257,7 @@
                 <span class="consola-shell__boton-punto consola-shell__boton-punto--rojo"></span>
                 <span class="consola-shell__boton-punto consola-shell__boton-punto--amarillo"></span>
                 <span class="consola-shell__boton-punto consola-shell__boton-punto--verde"></span>
-                <span class="consola-shell__prompt-usuario">oier@stg-homelab:~ (interactive shell)</span>
+                <span class="consola-shell__prompt-usuario">oier@stg-homelab:~</span>
               </div>
               <svg class="consola-shell__icono-actividad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -1322,10 +1265,10 @@
             </div>
 
             <div id="terminal-logs-contenedor" class="consola-shell__salida-logs" aria-live="polite">
-              <div class="log-registro log-registro--sys">STG-HOMELAB OS v4.2 // BASAURI NODE [43.2361° N, 2.8883° W]</div>
-              <div class="log-registro log-registro--ok">[OK] Linux Kernel &amp; Network Bridge (SMR Layer) -&gt; ONLINE</div>
-              <div class="log-registro log-registro--ok">[OK] Multiplatform Services &amp; DB Cluster (DAM Layer) -&gt; READY</div>
-              <div class="log-registro log-registro--ai">[AI] Local LLM &amp; Voice Synthesis Pipeline -&gt; EXPERIMENTING</div>
+              <div class="log-registro log-registro--sys">STG-HOMELAB OS // Nodo Basauri [43.2361° N, 2.8883° W]</div>
+              <div class="log-registro log-registro--ok">[OK] Capa SMR: Kernel Linux &amp; Puente de Red -> ONLINE</div>
+              <div class="log-registro log-registro--ok">[OK] Capa DAM: Servicios Multiplataforma &amp; Persistencia -> READY</div>
+              <div class="log-registro log-registro--ai">[AI] Capa IA: Inferencia Local &amp; Síntesis Vocal -> ACTIVO</div>
             </div>
 
             <!-- Entrada Interactiva de Comandos por Teclado -->
@@ -1333,15 +1276,15 @@
               <label for="input-comando-shell" class="consola-shell__prompt-linea">
                 <span class="consola-shell__prompt-flecha" aria-hidden="true">&gt;</span>
               </label>
-              <input type="text" id="input-comando-shell" class="consola-shell__input" placeholder="Teclea un comando (status, ai, stack, ping, whoami, help, clear)..." spellcheck="false" autocomplete="off" aria-label="Comando interactivo homelab">
+              <input type="text" id="input-comando-shell" class="consola-shell__input" placeholder="Escribe un comando (status, ai, stack, ping, whoami, help, clear)..." spellcheck="false" autocomplete="off" aria-label="Comando interactivo homelab">
               <button type="submit" class="solo-lectores">Ejecutar comando</button>
             </form>
 
             <div class="consola-shell__acciones-comandos">
-              <span class="consola-shell__etiqueta-ejecutar">EJECUTAR:</span>
-              <button type="button" class="boton-comando-shell" data-comando="status">status --homelab</button>
-              <button type="button" class="boton-comando-shell boton-comando-shell--ai" data-comando="ai">pipeline --ai</button>
-              <button type="button" class="boton-comando-shell" data-comando="stack">stack --layers</button>
+              <span class="consola-shell__etiqueta-ejecutar">Preajustes:</span>
+              <button type="button" class="boton-comando-shell" data-comando="status">status</button>
+              <button type="button" class="boton-comando-shell boton-comando-shell--ai" data-comando="ai">pipeline</button>
+              <button type="button" class="boton-comando-shell" data-comando="stack">stack</button>
               <button type="button" class="boton-comando-shell boton-comando-shell--limpiar" data-comando="clear">clear</button>
             </div>
           </div>
@@ -1350,27 +1293,24 @@
     </section>
 
     <!-- =======================================================================
-         G. CONTACTO & CIERRE MINIMALISTA (#contacto)
+         G. CONTACTO & CIERRE (#contacto)
          ======================================================================= -->
     <footer id="contacto" class="seccion-contenedor seccion-contacto" aria-labelledby="titulo-contacto">
       <div class="contacto-cuadricula-principal">
         <!-- Columna Izquierda: Información de Conexión -->
         <div class="contacto-columna-propuesta">
           <div>
-            <p class="seccion-indicador">04 // INITIALIZE CONNECTION</p>
+            <p class="seccion-indicador">04 / CONTACTO Y COMUNICACIÓN</p>
             <h2 id="titulo-contacto" class="contacto-titular">
-              <span>HAGAMOS ALGO</span>
-              <span class="contacto-titular__linea-acento">EXTRAORDINARIO.</span>
+              Iniciemos una conversación profesional.
             </h2>
             <p class="contacto-descripcion">
-              ¿Buscas automatizar procesos con Inteligencia Artificial, desarrollar plataformas a medida o integrar talento técnico híbrido (Sistemas + Código + IA) en tu equipo? Hablemos.
+              ¿Buscas automatizar procesos con Inteligencia Artificial, desarrollar soluciones de software a medida o incorporar un perfil técnico híbrido (Sistemas + Código + IA) en tu equipo? Conversemos sobre cómo aportar valor a tus proyectos.
             </p>
           </div>
 
           <div class="contacto-enlaces-directos">
             <button type="button" id="boton-copiar-email" class="boton-magnetico boton-magnetico--primario" aria-label="Copiar dirección de correo electrónico">
-              <span class="boton-magnetico__foco-cursor" aria-hidden="true"></span>
-              <span class="boton-magnetico__bisel" aria-hidden="true"></span>
               <span class="boton-magnetico__contenido">
                 <svg id="icono-mail-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -1388,10 +1328,8 @@
             </button>
 
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="boton-magnetico boton-magnetico--secundario" aria-label="Perfil de LinkedIn de Oier Santo Tomás">
-              <span class="boton-magnetico__foco-cursor" aria-hidden="true"></span>
-              <span class="boton-magnetico__bisel" aria-hidden="true"></span>
               <span class="boton-magnetico__contenido">
-                <span>LINKEDIN</span>
+                <span>LinkedIn</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -1399,11 +1337,9 @@
               </span>
             </a>
 
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="boton-magnetico boton-magnetico--secundario" aria-label="Perfil de GitHub de Oier Santo Tomás">
-              <span class="boton-magnetico__foco-cursor" aria-hidden="true"></span>
-              <span class="boton-magnetico__bisel" aria-hidden="true"></span>
+            <a href="https://github.com/Oierstg" target="_blank" rel="noopener noreferrer" class="boton-magnetico boton-magnetico--secundario" aria-label="Perfil de GitHub de Oier Santo Tomás">
               <span class="boton-magnetico__contenido">
-                <span>GITHUB</span>
+                <span>GitHub</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -1413,51 +1349,50 @@
           </div>
         </div>
 
-        <!-- Columna Derecha: Panel de Transmisión Rápida -->
+        <!-- Columna Derecha: Formulario de Contacto -->
         <div class="panel-transmision-directa" aria-labelledby="titulo-panel-transmision">
           <div class="panel-transmision-directa__cabecera">
             <span id="titulo-panel-transmision" class="panel-transmision-directa__titulo">
-              // TRANSMISIÓN DIRECTA
+              Enviar Mensaje Directo
             </span>
-            <span class="panel-transmision-directa__canal">● CANAL ACTIVO</span>
           </div>
 
           <form id="formulario-transmision" class="formulario-contacto">
             <div class="formulario-contacto__fila-doble">
               <div class="campo-formulario">
                 <label for="contacto-nombre" class="campo-formulario__etiqueta">
-                  NOMBRE / EMPRESA
+                  Nombre o empresa
                 </label>
-                <input type="text" id="contacto-nombre" required placeholder="Tu nombre o empresa..." class="campo-formulario__input" autocomplete="name">
+                <input type="text" id="contacto-nombre" required placeholder="Tu nombre..." class="campo-formulario__input" autocomplete="name">
               </div>
 
               <div class="campo-formulario">
                 <label for="contacto-email" class="campo-formulario__etiqueta">
-                  CORREO ELECTRÓNICO
+                  Correo electrónico
                 </label>
                 <input type="email" id="contacto-email" required placeholder="tu.correo@ejemplo.com" class="campo-formulario__input" autocomplete="email">
               </div>
             </div>
 
             <div>
-              <span id="etiqueta-area-interes" class="campo-formulario__etiqueta">ÁREA DE INTERÉS</span>
+              <span id="etiqueta-area-interes" class="campo-formulario__etiqueta">Área de interés</span>
               <div class="grupo-botones-temas" role="radiogroup" aria-labelledby="etiqueta-area-interes">
-                <button type="button" class="boton-tema-interes activo" role="radio" aria-checked="true">AUTOMATIZACIÓN &amp; IA</button>
-                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">DESARROLLO SOFTWARE</button>
-                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">VOICE AI / MULTIMEDIA</button>
-                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">SISTEMAS &amp; DATOS</button>
+                <button type="button" class="boton-tema-interes activo" role="radio" aria-checked="true">Automatización &amp; IA</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">Desarrollo Software</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">Voice AI / Multimedia</button>
+                <button type="button" class="boton-tema-interes" role="radio" aria-checked="false">Sistemas &amp; Infraestructura</button>
               </div>
             </div>
 
             <div>
               <label for="mensaje-proyecto" class="campo-formulario__etiqueta">
-                MENSAJE O ESPECIFICACIÓN TÉCNICA
+                Mensaje o propuesta
               </label>
-              <textarea id="mensaje-proyecto" rows="3" required placeholder="Hola Oier, nos gustaría hablar sobre un proyecto de automatización / desarrollo..." class="campo-formulario__textarea"></textarea>
+              <textarea id="mensaje-proyecto" rows="4" required placeholder="Hola Oier, nos gustaría hablar sobre..." class="campo-formulario__textarea"></textarea>
             </div>
 
             <button type="submit" id="boton-enviar-formulario" class="boton-enviar-propuesta">
-              <span id="texto-boton-enviar">ENVIAR PROPUESTA</span>
+              <span id="texto-boton-enviar">Enviar Mensaje</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -1467,7 +1402,7 @@
         </div>
       </div>
 
-      <!-- Pie Inferior con Coordenadas Geográficas -->
+      <!-- Pie Inferior con Identificación Geográfica y Respeto Institucional -->
       <div class="pie-pagina-inferior">
         <div class="pie-pagina-inferior__coordenadas">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1475,10 +1410,10 @@
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
-          <span>BASAURI, BIZKAIA // 43.2361° N, 2.8883° W</span>
+          <span>Basauri, Bizkaia · 43.2361° N, 2.8883° W</span>
         </div>
         <div>
-          &copy; 2026 OIER SANTO TOMÁS GAMAYO &middot; ALL SYSTEMS NOMINAL
+          &copy; 2026 Oier Santo Tomás Gamayo · Arquitectura de Sistemas, Software e Inteligencia Artificial
         </div>
       </div>
     </footer>

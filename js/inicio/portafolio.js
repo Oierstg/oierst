@@ -1,6 +1,6 @@
 /**
  * LÓGICA DE CONTROL DE LA VISTA PRINCIPAL (PORTAFOLIO)
- * Oier Santo Tomás Gamayo - Portafolio Interactivo
+ * Oier Santo Tomás Gamayo - Portafolio Profesional
  * Código Modular ES6+, Manipulación Segura del DOM y Cero innerHTML Inseguro
  * Optimizado para Rendimiento Extremo, Accesibilidad (WCAG 2.1 AA) y Navegación Móvil
  */
@@ -20,7 +20,7 @@ const audio = new AudioGlaciar();
 const estado = {
   modoRender: 'crystal',
   progresoScroll: 0,
-  reveladoManifiesto: 0.35,
+  reveladoManifiesto: 1, // 100% legible por defecto (alta legibilidad empresarial)
   anulacionManualManifiesto: false,
   filtroTrayectoria: 'TODOS',
   nodoTecnologicoActivo: 'Python // Automatización, Scripts & IA',
@@ -32,7 +32,7 @@ const estado = {
 };
 
 // ============================================================================
-// 1. GESTOR DE ESCENA 3D THREE.JS (IGLOO CRYO-CRYSTAL NUCLEUS)
+// 1. GESTOR DE ESCENA 3D THREE.JS (ESCULTURA GEOMÉTRICA ARQUITECTÓNICA)
 // ============================================================================
 class GestorEscena3D {
   constructor(contenedorId) {
@@ -80,7 +80,7 @@ class GestorEscena3D {
 
     // Escena, Cámara y Renderer
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(42, cont.clientWidth / cont.clientHeight, 0.1, 100);
+    this.camera = new THREE.PerspectiveCamera(40, cont.clientWidth / cont.clientHeight, 0.1, 100);
     this.camera.position.set(0, 0, 6.8);
 
     this.renderer = new THREE.WebGLRenderer({
@@ -91,27 +91,27 @@ class GestorEscena3D {
     this.renderer.setSize(cont.clientWidth, cont.clientHeight);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.25;
+    this.renderer.toneMappingExposure = 1.1;
     cont.appendChild(this.renderer.domElement);
 
     // Grupo Raíz
     this.rootGroup = new THREE.Group();
     this.scene.add(this.rootGroup);
 
-    // 1. Cúpula Exterior Facetada (Icosaedro Cryo)
+    // 1. Cúpula Exterior Facetada (Icosaedro Grafito/Pizarra Mate)
     const outerGeo = new THREE.IcosahedronGeometry(1.72, 1);
     this.outerMat = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#0E1726'),
-      emissive: new THREE.Color('#081C2E'),
-      emissiveIntensity: 0.35,
-      roughness: 0.12,
-      metalness: 0.15,
-      transmission: 0.82,
-      thickness: 1.8,
-      ior: 1.45,
-      reflectivity: 0.9,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.08,
+      color: new THREE.Color('#111622'),
+      emissive: new THREE.Color('#0a0e17'),
+      emissiveIntensity: 0.15,
+      roughness: 0.28,
+      metalness: 0.25,
+      transmission: 0.65,
+      thickness: 1.4,
+      ior: 1.35,
+      reflectivity: 0.5,
+      clearcoat: 0.4,
+      clearcoatRoughness: 0.15,
       flatShading: true,
       transparent: true,
       opacity: 0.88,
@@ -119,13 +119,13 @@ class GestorEscena3D {
     this.outerCrystalMesh = new THREE.Mesh(outerGeo, this.outerMat);
     this.rootGroup.add(this.outerCrystalMesh);
 
-    // 2. Malla Geodésica Alámbrica
-    const wireGeo = new THREE.IcosahedronGeometry(1.75, 1);
+    // 2. Malla Geodésica Alámbrica Sutil (Línea Slate de Precisión)
+    const wireGeo = new THREE.IcosahedronGeometry(1.74, 1);
     const wireframeGeometry = new THREE.WireframeGeometry(wireGeo);
     this.wireMat = new THREE.LineBasicMaterial({
-      color: new THREE.Color('#A0D2EB'),
+      color: new THREE.Color('#475569'),
       transparent: true,
-      opacity: 0.42,
+      opacity: 0.45,
     });
     const outerWireframe = new THREE.LineSegments(wireframeGeometry, this.wireMat);
     this.rootGroup.add(outerWireframe);
@@ -141,74 +141,74 @@ class GestorEscena3D {
       const key = `${vx},${vy},${vz}`;
       if (!seen.has(key)) {
         seen.add(key);
-        uniquePoints.push(parseFloat(vx) * 1.02, parseFloat(vy) * 1.02, parseFloat(vz) * 1.02);
+        uniquePoints.push(parseFloat(vx) * 1.015, parseFloat(vy) * 1.015, parseFloat(vz) * 1.015);
       }
     }
     const nodesGeo = new THREE.BufferGeometry();
     nodesGeo.setAttribute('position', new THREE.Float32BufferAttribute(uniquePoints, 3));
     const nodesMat = new THREE.PointsMaterial({
-      color: new THREE.Color('#E2E8F0'),
-      size: 0.065,
+      color: new THREE.Color('#94A3B8'),
+      size: 0.045,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.75,
     });
     const vertexNodes = new THREE.Points(nodesGeo, nodesMat);
     this.rootGroup.add(vertexNodes);
 
-    // 4. Núcleo Interno de Inteligencia Artificial (Octaedro)
+    // 4. Núcleo Interno Estructural (Octaedro)
     const innerGeo = new THREE.OctahedronGeometry(0.86, 2);
     this.innerMat = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#7DD3FC'),
-      emissive: new THREE.Color('#0284C7'),
-      emissiveIntensity: 0.65,
+      color: new THREE.Color('#3B82F6'),
+      emissive: new THREE.Color('#1D4ED8'),
+      emissiveIntensity: 0.35,
       wireframe: true,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.5,
     });
     this.innerCoreMesh = new THREE.Mesh(innerGeo, this.innerMat);
     this.rootGroup.add(this.innerCoreMesh);
 
-    // 5. Semilla Central Cristalina
+    // 5. Semilla Central Monolítica
     const seedGeo = new THREE.OctahedronGeometry(0.42, 0);
     this.seedMat = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#E0F2FE'),
-      emissive: new THREE.Color('#38BDF8'),
-      emissiveIntensity: 0.9,
-      roughness: 0.05,
-      metalness: 0.3,
+      color: new THREE.Color('#F8FAFC'),
+      emissive: new THREE.Color('#2563EB'),
+      emissiveIntensity: 0.4,
+      roughness: 0.15,
+      metalness: 0.5,
       flatShading: true,
     });
     this.seedMesh = new THREE.Mesh(seedGeo, this.seedMat);
     this.rootGroup.add(this.seedMesh);
 
-    // 6. Anillos Orbitales
-    const ring1Geo = new THREE.TorusGeometry(2.35, 0.007, 16, 120);
+    // 6. Anillos Guía de Rotación
+    const ring1Geo = new THREE.TorusGeometry(2.35, 0.005, 16, 120);
     const ring1Mat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#A0A5B1'),
+      color: new THREE.Color('#334155'),
       transparent: true,
-      opacity: 0.24,
+      opacity: 0.25,
     });
     this.orbitalRing1 = new THREE.Mesh(ring1Geo, ring1Mat);
     this.orbitalRing1.rotation.x = Math.PI / 2.6;
     this.orbitalRing1.rotation.y = 0.3;
     this.rootGroup.add(this.orbitalRing1);
 
-    const ring2Geo = new THREE.TorusGeometry(2.68, 0.005, 16, 120);
+    const ring2Geo = new THREE.TorusGeometry(2.68, 0.004, 16, 120);
     const ring2Mat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#7DD3FC'),
+      color: new THREE.Color('#2563EB'),
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.15,
     });
     this.orbitalRing2 = new THREE.Mesh(ring2Geo, ring2Mat);
     this.orbitalRing2.rotation.x = -Math.PI / 3.2;
     this.orbitalRing2.rotation.z = 0.6;
     this.rootGroup.add(this.orbitalRing2);
 
-    // 7. Partículas Glaciares Flotantes
-    const particleCount = 260;
+    // 7. Partículas Ambientales Monocromáticas
+    const particleCount = 140;
     const particlePositions = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-      const radius = 2.6 + Math.random() * 3.8;
+      const radius = 2.4 + Math.random() * 3.4;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
       particlePositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
@@ -218,31 +218,31 @@ class GestorEscena3D {
     const particlesGeo = new THREE.BufferGeometry();
     particlesGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
     const particlesMat = new THREE.PointsMaterial({
-      color: new THREE.Color('#BAE6FD'),
-      size: 0.032,
+      color: new THREE.Color('#64748B'),
+      size: 0.022,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.4,
     });
     this.particleSystem = new THREE.Points(particlesGeo, particlesMat);
     this.scene.add(this.particleSystem);
 
-    // 8. Luces Atmosféricas
-    const ambientLight = new THREE.AmbientLight('#1E293B', 1.8);
+    // 8. Iluminación de Estudio Técnica
+    const ambientLight = new THREE.AmbientLight('#0F172A', 1.8);
     this.scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight('#E0F2FE', 3.4);
+    const keyLight = new THREE.DirectionalLight('#F8FAFC', 2.4);
     keyLight.position.set(4, 5, 5);
     this.scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight('#38BDF8', 2.8);
+    const rimLight = new THREE.DirectionalLight('#2563EB', 1.4);
     rimLight.position.set(-5, -3, -2);
     this.scene.add(rimLight);
 
-    this.cursorLight = new THREE.PointLight('#7DD3FC', 3.5, 10);
+    this.cursorLight = new THREE.PointLight('#3B82F6', 1.8, 8);
     this.cursorLight.position.set(0, 0, 3.5);
     this.scene.add(this.cursorLight);
 
-    // Eventos e IntersectionObserver para Optimización de Rendimiento
+    // Eventos e IntersectionObserver para Optimización
     this.vincularEventos();
     this.inicializarObservadorVisibilidad();
 
@@ -256,15 +256,12 @@ class GestorEscena3D {
     this.observadorVisibilidad = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const visibleAnterior = this.estaVisible;
           this.estaVisible = entry.isIntersecting;
 
           if (this.estaVisible && !this.frameId) {
-            // Reanudar el bucle 3D al volver al viewport
             this.clock.start();
             this.animar();
           } else if (!this.estaVisible && this.frameId) {
-            // Detener el bucle 3D para dejar la CPU/GPU al 0% fuera del Hero
             cancelAnimationFrame(this.frameId);
             this.frameId = null;
           }
@@ -290,8 +287,8 @@ class GestorEscena3D {
       if (this.isDragging) {
         const dx = clientX - this.prevDrag.x;
         const dy = clientY - this.prevDrag.y;
-        this.dragVelocity.x = dx * 0.008;
-        this.dragVelocity.y = dy * 0.008;
+        this.dragVelocity.x = dx * 0.007;
+        this.dragVelocity.y = dy * 0.007;
         this.prevDrag = { x: clientX, y: clientY };
       }
     };
@@ -359,70 +356,67 @@ class GestorEscena3D {
     const scrollProg = estado.progresoScroll;
 
     // Amortiguación
-    this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.06;
-    this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.06;
+    this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.05;
+    this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.05;
     this.dragVelocity.x *= 0.94;
     this.dragVelocity.y *= 0.94;
 
-    // Modos de Shader / Render
+    // Modos de Visualización Arquitectónicos
     if (modo === 'crystal') {
       this.outerCrystalMesh.visible = true;
       this.outerMat.opacity = 0.88;
       this.outerMat.wireframe = false;
-      this.wireMat.opacity = 0.42;
-      this.innerMat.emissiveIntensity = 0.65;
-      this.seedMat.emissiveIntensity = 0.95;
+      this.wireMat.opacity = 0.35;
+      this.innerMat.emissiveIntensity = 0.35;
+      this.seedMat.emissiveIntensity = 0.45;
     } else if (modo === 'wireframe') {
       this.outerCrystalMesh.visible = false;
-      this.wireMat.opacity = 0.85;
-      this.innerMat.emissiveIntensity = 1.1;
-      this.seedMat.emissiveIntensity = 1.3;
+      this.wireMat.opacity = 0.75;
+      this.innerMat.emissiveIntensity = 0.55;
+      this.seedMat.emissiveIntensity = 0.65;
     } else if (modo === 'overclock') {
       this.outerCrystalMesh.visible = true;
       this.outerMat.opacity = 0.65;
-      this.wireMat.opacity = 0.78;
-      this.innerMat.emissiveIntensity = 1.6 + Math.sin(elapsed * 6) * 0.4;
-      this.seedMat.emissiveIntensity = 2.0;
+      this.wireMat.opacity = 0.65;
+      this.innerMat.emissiveIntensity = 0.8 + Math.sin(elapsed * 4) * 0.2;
+      this.seedMat.emissiveIntensity = 0.95;
     }
 
-    // Si el usuario tiene reducción de movimiento, suprimir oscilaciones constantes
-    const multVel = this.movimientoReducido ? 0 : (modo === 'overclock' ? 1.85 : 1.0);
-    this.rootGroup.rotation.y += 0.0032 * multVel + this.dragVelocity.x;
-    this.rootGroup.rotation.x += 0.0014 * multVel + this.dragVelocity.y;
+    // Rotación suave y controlada
+    const multVel = this.movimientoReducido ? 0 : 0.8;
+    this.rootGroup.rotation.y += 0.0022 * multVel + this.dragVelocity.x;
+    this.rootGroup.rotation.x += 0.0010 * multVel + this.dragVelocity.y;
 
-    const targetGroupX = -this.mouse.y * 0.35 + scrollProg * 1.4;
-    const targetGroupZ = -this.mouse.x * 0.25;
+    const targetGroupX = -this.mouse.y * 0.25 + scrollProg * 1.0;
+    const targetGroupZ = -this.mouse.x * 0.2;
     this.rootGroup.rotation.x += (targetGroupX - this.rootGroup.rotation.x) * 0.02;
-    this.rootGroup.rotation.z += (targetGroupZ - this.rootGroup.rotation.z) * 0.03;
+    this.rootGroup.rotation.z += (targetGroupZ - this.rootGroup.rotation.z) * 0.02;
 
     if (!this.movimientoReducido) {
-      this.rootGroup.position.y = Math.sin(elapsed * 1.3) * 0.12;
-      const scalePulse =
-        modo === 'overclock' ? 1 + Math.sin(elapsed * 4.5) * 0.035 : 1 + Math.sin(elapsed * 1.6) * 0.015;
-      this.rootGroup.scale.setScalar(scalePulse);
+      this.rootGroup.position.y = Math.sin(elapsed * 1.0) * 0.08;
 
-      this.innerCoreMesh.rotation.y = -elapsed * 0.45 * multVel;
-      this.innerCoreMesh.rotation.z = elapsed * 0.28;
-      this.seedMesh.rotation.x = elapsed * 0.8;
-      this.seedMesh.rotation.y = elapsed * 0.6;
+      this.innerCoreMesh.rotation.y = -elapsed * 0.3 * multVel;
+      this.innerCoreMesh.rotation.z = elapsed * 0.2;
+      this.seedMesh.rotation.x = elapsed * 0.5;
+      this.seedMesh.rotation.y = elapsed * 0.4;
 
-      this.orbitalRing1.rotation.z = elapsed * 0.22;
-      this.orbitalRing2.rotation.y = -elapsed * 0.18;
+      this.orbitalRing1.rotation.z = elapsed * 0.15;
+      this.orbitalRing2.rotation.y = -elapsed * 0.12;
 
-      this.particleSystem.rotation.y = elapsed * 0.05 + this.mouse.x * 0.12;
-      this.particleSystem.rotation.x = -this.mouse.y * 0.08;
+      this.particleSystem.rotation.y = elapsed * 0.03 + this.mouse.x * 0.08;
+      this.particleSystem.rotation.x = -this.mouse.y * 0.05;
     }
 
-    this.cursorLight.position.x = this.mouse.x * 3.8;
-    this.cursorLight.position.y = this.mouse.y * 3.8;
+    this.cursorLight.position.x = this.mouse.x * 3.5;
+    this.cursorLight.position.y = this.mouse.y * 3.5;
 
-    const targetCamZ = 6.8 - Math.min(scrollProg * 1.4, 1.1);
-    this.camera.position.z += (targetCamZ - this.camera.position.z) * 0.05;
+    const targetCamZ = 6.8 - Math.min(scrollProg * 1.2, 0.9);
+    this.camera.position.z += (targetCamZ - this.camera.position.z) * 0.04;
 
     this.renderer.render(this.scene, this.camera);
 
-    // Telemetría HUD (throttled a ~180ms)
-    if (elapsed - this.ultimoEnvioTelemetria > 0.18) {
+    // Telemetría HUD (throttled a ~200ms)
+    if (elapsed - this.ultimoEnvioTelemetria > 0.2) {
       this.ultimoEnvioTelemetria = elapsed;
       actualizarTelemetriaHUD({
         rotX: ((this.rootGroup.rotation.x * 180) / Math.PI).toFixed(1),
@@ -445,7 +439,7 @@ function actualizarTelemetriaHUD({ rotX, rotY, vecX, vecY }) {
 }
 
 // ============================================================================
-// 2. BOTONES MAGNÉTICOS CON RESPLANDOR PERIMETRAL
+// 2. BOTONES MAGNÉTICOS SUTILES (MICROINTERACCIÓN DISCRETA)
 // ============================================================================
 function inicializarBotonesMagneticos() {
   const botones = document.querySelectorAll('.boton-magnetico');
@@ -460,15 +454,11 @@ function inicializarBotonesMagneticos() {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const offsetX = (relX - centerX) * 0.22;
-      const offsetY = (relY - centerY) * 0.22;
-
-      const glowX = (relX / rect.width) * 100;
-      const glowY = (relY / rect.height) * 100;
+      // Desplazamiento mínimo (4px máx) para evitar sensación de distorsión
+      const offsetX = (relX - centerX) * 0.12;
+      const offsetY = (relY - centerY) * 0.12;
 
       boton.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
-      boton.style.setProperty('--resplandor-x', `${glowX}%`);
-      boton.style.setProperty('--resplandor-y', `${glowY}%`);
     });
 
     boton.addEventListener('mouseleave', () => {
@@ -478,7 +468,7 @@ function inicializarBotonesMagneticos() {
 }
 
 // ============================================================================
-// 3. TARJETAS 3D TILT INTERACTIVAS (ÁREAS DE ENFOQUE)
+// 3. TARJETAS DE ENFOQUE TÉCNICO (ELEVACIÓN NATURAL Y SUTIL)
 // ============================================================================
 function inicializarTarjetasTilt() {
   const tarjetas = document.querySelectorAll('.tarjeta-enfoque-3d');
@@ -489,33 +479,14 @@ function inicializarTarjetasTilt() {
       audio.reproducirTick();
     });
 
-    tarjeta.addEventListener('mousemove', (e) => {
-      const rect = tarjeta.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-
-      const glowX = (x / rect.width) * 100;
-      const glowY = (y / rect.height) * 100;
-
-      tarjeta.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1)`;
-      tarjeta.style.setProperty('--foco-x', `${glowX}%`);
-      tarjeta.style.setProperty('--foco-y', `${glowY}%`);
-    });
-
     tarjeta.addEventListener('mouseleave', () => {
       tarjeta.classList.remove('activa');
-      tarjeta.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   });
 }
 
 // ============================================================================
-// 4. MANIFIESTO: REVELADO TIPOGRÁFICO PROGRESIVO
+// 4. MANIFIESTO: LEGIBILIDAD DIRECTA Y CONTROL DE ILUMINACIÓN SUTIL
 // ============================================================================
 function inicializarManifiesto() {
   const contenedorPalabras = document.getElementById('contenedor-palabras-manifiesto');
@@ -526,11 +497,15 @@ function inicializarManifiesto() {
   if (!contenedorPalabras) return;
 
   const palabras = contenedorPalabras.querySelectorAll('.palabra-manifiesto');
-  const totalPalabras = palabras.length;
+
+  // Asegurar que todas las palabras sean legibles de forma predeterminada
+  palabras.forEach((p) => p.classList.add('iluminada'));
+  if (etiquetaPorcentaje) etiquetaPorcentaje.textContent = '100%';
+  if (deslizador) deslizador.value = '1';
 
   const actualizarIluminacion = (progreso) => {
     palabras.forEach((palabra, index) => {
-      const umbral = index / totalPalabras;
+      const umbral = (index / palabras.length) * 0.7;
       if (progreso >= umbral) {
         palabra.classList.add('iluminada');
       } else {
@@ -543,23 +518,6 @@ function inicializarManifiesto() {
     }
   };
 
-  const calcularIluminacionPorScroll = () => {
-    const seccion = document.getElementById('vision');
-    if (!seccion) return;
-
-    const rect = seccion.getBoundingClientRect();
-    const viewH = window.innerHeight;
-    const inicio = viewH * 0.85;
-    const fin = viewH * 0.15;
-    const crudo = (inicio - rect.top) / (inicio - fin + rect.height * 0.45);
-    const progreso = Math.min(Math.max(crudo, 0.12), 1);
-
-    estado.reveladoManifiesto = progreso;
-    if (deslizador) deslizador.value = progreso.toString();
-    actualizarIluminacion(progreso);
-  };
-
-  // Deslizador manual
   if (deslizador) {
     deslizador.addEventListener('input', (e) => {
       estado.anulacionManualManifiesto = true;
@@ -568,36 +526,19 @@ function inicializarManifiesto() {
     });
   }
 
-  // Botón para restablecer el modo automático por scroll
   if (botonReinicio) {
     botonReinicio.addEventListener('click', () => {
       audio.reproducirCampana();
       estado.anulacionManualManifiesto = false;
-      calcularIluminacionPorScroll();
-      anunciarAccesible('Iluminación automática del manifiesto restablecida.');
+      actualizarIluminacion(1);
+      if (deslizador) deslizador.value = '1';
+      anunciarAccesible('Modo de lectura completa restablecido.');
     });
   }
-
-  // Hover en palabras
-  palabras.forEach((p) => {
-    p.addEventListener('mouseenter', () => audio.reproducirTick());
-  });
-
-  // Cálculo en scroll
-  window.addEventListener(
-    'scroll',
-    limitarFrecuencia(() => {
-      if (estado.anulacionManualManifiesto) return;
-      calcularIluminacionPorScroll();
-    }, 50),
-    { passive: true }
-  );
-
-  actualizarIluminacion(estado.reveladoManifiesto);
 }
 
 // ============================================================================
-// 5. LÍNEA DE TIEMPO: FILTRADO Y ACORDEÓN INTERACTIVO ACCESIBLE
+// 5. LÍNEA DE TIEMPO: FILTRADO SEGMENTADO Y ACORDEÓN TÉCNICO
 // ============================================================================
 function inicializarTrayectoria() {
   const botonesFiltro = document.querySelectorAll('.boton-filtro-trayectoria');
@@ -646,14 +587,14 @@ function inicializarTrayectoria() {
         const b = i.querySelector('.item-linea-tiempo__cabecera');
         if (b) b.setAttribute('aria-expanded', 'false');
         const accionTexto = i.querySelector('.item-linea-tiempo__accion-texto');
-        if (accionTexto) accionTexto.textContent = 'INSPECCIONAR NODO';
+        if (accionTexto) accionTexto.textContent = 'Detalles';
       });
 
       if (!yaExpandido) {
         item.classList.add('expandido');
         if (cabeceraBoton) cabeceraBoton.setAttribute('aria-expanded', 'true');
         const accionTexto = item.querySelector('.item-linea-tiempo__accion-texto');
-        if (accionTexto) accionTexto.textContent = 'OCULTAR DETALLES';
+        if (accionTexto) accionTexto.textContent = 'Ocultar';
 
         const tituloHito = item.querySelector('.item-linea-tiempo__titulo')?.textContent?.trim() || '';
         anunciarAccesible(`Hito expandido: ${tituloHito}`);
@@ -670,7 +611,7 @@ function inicializarTrayectoria() {
 }
 
 // ============================================================================
-// 6. MATRIZ DE TECNOLOGÍAS & CONSOLA HOMELAB SHELL
+// 6. MATRIZ DE TECNOLOGÍAS & CONSOLA HOMELAB STATUS
 // ============================================================================
 function inicializarMatrizYHomelab() {
   const tarjetasTech = document.querySelectorAll('.tarjeta-tecnologia');
@@ -724,7 +665,6 @@ function inicializarMatrizYHomelab() {
 
     contenedorLogs.appendChild(div);
 
-    // Mantener un historial máximo de 8 entradas
     while (contenedorLogs.children.length > 8) {
       contenedorLogs.removeChild(contenedorLogs.firstChild);
     }
@@ -740,29 +680,29 @@ function inicializarMatrizYHomelab() {
       agregarLog('cmd', `$ ${cmdTexto}`);
       agregarLog(
         'ok',
-        'UPTIME: 99.9% | ENV: LOCAL SERVER (Basauri) | STATE: EXPERIMENTING | CONTAINERS: 14 ACTIVE'
+        'UPTIME: 99.9% | ENV: SERVIDOR LOCAL (Basauri) | ESTADO: OPERATIVO | 14 CONTENEDORES'
       );
     } else if (limpio === 'ai' || limpio === 'pipeline' || limpio.includes('voice') || limpio.includes('llm')) {
       agregarLog('cmd', `$ ${cmdTexto}`);
       agregarLog(
         'ai',
-        'VOICE_AI (DOMAX Engine): READY | LOCAL_LLM: Qwen/Llama Quantized | SOMORROSTRO BIG DATA: ACTIVE'
+        'VOICE_AI (DOMAX): LISTO | LLM LOCAL: Quantized / On-Prem | SOMORROSTRO BIG DATA: ACTIVO'
       );
     } else if (limpio === 'stack' || limpio === 'layers' || limpio.includes('stack')) {
       agregarLog('cmd', `$ ${cmdTexto}`);
       agregarLog(
         'ok',
-        'L1 [SMR]: Linux/Redes -> L2 [DAM]: Java/Python/JS/SQL/Mongo -> L3 [IA]: Automation & GenAI'
+        'L1 [SMR]: Linux/Redes -> L2 [DAM]: Java/Python/JS/SQL/Mongo -> L3 [IA]: GenAI & Pipelines'
       );
     } else if (limpio === 'ping') {
       agregarLog('cmd', '$ ping basauri.gateway');
       agregarLog('ok', '64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=11.2ms [NOMINAL]');
     } else if (limpio === 'whoami') {
       agregarLog('cmd', '$ whoami');
-      agregarLog('ok', 'oier@stg-homelab: Oier Santo Tomás Gamayo // AI Integration & Multiplatform Specialist');
+      agregarLog('ok', 'oier@stg-homelab: Oier Santo Tomás Gamayo · Especialista en Integración de IA & DAM');
     } else if (limpio === 'contacto' || limpio === 'contact') {
       agregarLog('cmd', `$ ${cmdTexto}`);
-      agregarLog('ok', 'Desplazando al canal de conexión directa (#contacto)...');
+      agregarLog('ok', 'Navegando a la sección de contacto (#contacto)...');
       desplazarSuavementeA('contacto');
     } else if (limpio === 'help' || limpio === 'ayuda' || limpio === '?') {
       agregarLog('cmd', '$ help');
@@ -770,16 +710,15 @@ function inicializarMatrizYHomelab() {
     } else if (limpio === 'clear' || limpio === 'cls') {
       if (contenedorLogs) {
         contenedorLogs.textContent = '';
-        agregarLog('sys', 'STG-HOMELAB TERMINAL // BUFFER CLEARED');
-        agregarLog('ok', 'System ready. Click any diagnostic preset or type a command.');
+        agregarLog('sys', 'CONSOLA HOMELAB REINICIADA');
+        agregarLog('ok', 'Sistema listo. Haz clic en un preajuste o escribe un comando.');
       }
     } else {
       agregarLog('cmd', `$ ${cmdTexto}`);
-      agregarLog('sys', `bash: comando no encontrado: "${cmdTexto}". Escribe "help" para ver los comandos.`);
+      agregarLog('sys', `bash: orden no encontrada: "${cmdTexto}". Escribe "help" para ver los comandos.`);
     }
   };
 
-  // Ejecución vía Presets
   botonesComando.forEach((btn) => {
     btn.addEventListener('click', () => {
       audio.reproducirCampana();
@@ -793,7 +732,6 @@ function inicializarMatrizYHomelab() {
     btn.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 
-  // Ejecución Interactiva por Teclado
   if (formShell && inputShell) {
     formShell.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -806,16 +744,15 @@ function inicializarMatrizYHomelab() {
     });
   }
 
-  // Simulación Periódica de Telemetría Dinámica Homelab (Optimizada con visibilidad)
+  // Simulación Periódica de Telemetría Dinámica Homelab
   setInterval(() => {
     if (document.visibilityState === 'hidden') return;
 
-    // Verificar si la sección de stack está en el viewport
     const seccionStack = document.getElementById('stack');
     if (seccionStack) {
       const rect = seccionStack.getBoundingClientRect();
       if (rect.bottom < -200 || rect.top > window.innerHeight + 200) {
-        return; // Pausar simulación cuando no se visualiza la sección
+        return;
       }
     }
 
@@ -838,11 +775,11 @@ function inicializarMatrizYHomelab() {
     if (elCpu) elCpu.textContent = `${estado.telemetriaHomelab.cpu}%`;
     if (elVram) elVram.textContent = `${estado.telemetriaHomelab.vram} GB`;
     if (elPing) elPing.textContent = `${estado.telemetriaHomelab.ping}ms`;
-  }, 2400);
+  }, 2500);
 }
 
 // ============================================================================
-// 7. FORMULARIO DE TRANSMISIÓN DIRECTA & COPIA DE EMAIL
+// 7. FORMULARIO DE CONTACTO DIRECTO & COPIA DE CORREO
 // ============================================================================
 function inicializarContacto() {
   const btnCopiar = document.getElementById('boton-copiar-email');
@@ -855,7 +792,7 @@ function inicializarContacto() {
       audio.reproducirCampana();
       const exito = await copiarAlPortapapeles('oier.santotomas@dev-ops.es');
       if (exito) {
-        if (textoEmail) textoEmail.textContent = 'EMAIL COPIADO AL PORTAPAPELES';
+        if (textoEmail) textoEmail.textContent = 'Copiado al portapapeles';
         if (iconoCheck) iconoCheck.classList.remove('elemento-oculto');
         if (iconoMail) iconoMail.classList.add('elemento-oculto');
 
@@ -865,14 +802,14 @@ function inicializarContacto() {
           if (textoEmail) textoEmail.textContent = 'oier.santotomas@dev-ops.es';
           if (iconoCheck) iconoCheck.classList.add('elemento-oculto');
           if (iconoMail) iconoMail.classList.remove('elemento-oculto');
-        }, 2600);
+        }, 2500);
       }
     });
 
     btnCopiar.addEventListener('mouseenter', () => audio.reproducirTick());
   }
 
-  // Temas de Contacto Rápido (Radiogroup Accesible)
+  // Temas de Contacto Rápido
   const botonesTemas = document.querySelectorAll('.boton-tema-interes');
   botonesTemas.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -886,7 +823,7 @@ function inicializarContacto() {
     });
   });
 
-  // Envío del Formulario con Despacho de Correo Estructurado
+  // Envío del Formulario
   const formulario = document.getElementById('formulario-transmision');
   const botonEnviar = document.getElementById('boton-enviar-formulario');
   const textoBotonEnviar = document.getElementById('texto-boton-enviar');
@@ -903,22 +840,21 @@ function inicializarContacto() {
       const temaActivo = document.querySelector('.boton-tema-interes.activo')?.textContent?.trim() || 'Consulta General';
 
       const textoOriginal = textoBotonEnviar.textContent;
-      textoBotonEnviar.textContent = 'TRANSMISIÓN REGISTRADA · GRACIAS';
+      textoBotonEnviar.textContent = 'Mensaje preparado';
       botonEnviar.style.backgroundColor = 'var(--color-estado-activo)';
       botonEnviar.style.color = '#FFFFFF';
 
-      anunciarAccesible('Propuesta registrada con éxito. Abriendo canal de comunicación.');
+      anunciarAccesible('Mensaje procesado. Abriendo cliente de correo...');
 
-      // Despacho de enlace mailto preformateado
-      const asunto = encodeURIComponent(`[Portafolio STG] Propuesta de ${nombre} // ${temaActivo}`);
+      const asunto = encodeURIComponent(`[Contacto STG] Mensaje de ${nombre} // ${temaActivo}`);
       const cuerpo = encodeURIComponent(
-        `Hola Oier,\n\nNombre / Empresa: ${nombre}\nCorreo: ${email}\nÁrea de Interés: ${temaActivo}\n\nMensaje o Especificación Técnica:\n${mensaje}\n\n---\nEnviado desde el portafolio interactivo STG`
+        `Hola Oier,\n\nNombre / Empresa: ${nombre}\nCorreo: ${email}\nÁrea de Interés: ${temaActivo}\n\nMensaje:\n${mensaje}\n\n---\nEnviado desde el portafolio profesional de Oier Santo Tomás`
       );
       const enlaceMailto = `mailto:oier.santotomas@dev-ops.es?subject=${asunto}&body=${cuerpo}`;
 
       setTimeout(() => {
         window.location.href = enlaceMailto;
-      }, 600);
+      }, 500);
 
       if (campoMensaje) campoMensaje.value = '';
       const campoNombre = document.getElementById('contacto-nombre');
@@ -930,7 +866,7 @@ function inicializarContacto() {
         textoBotonEnviar.textContent = textoOriginal;
         botonEnviar.style.backgroundColor = '';
         botonEnviar.style.color = '';
-      }, 4000);
+      }, 3500);
     });
   }
 }
@@ -969,7 +905,6 @@ function inicializarMenuMovil() {
 
   botonMenu.addEventListener('click', () => alternarMenu());
 
-  // Navegación en enlaces del menú móvil
   const enlacesMoviles = menuDesplegable.querySelectorAll('.enlace-navegacion-movil');
   enlacesMoviles.forEach((enlace) => {
     enlace.addEventListener('click', (e) => {
@@ -983,7 +918,6 @@ function inicializarMenuMovil() {
     });
   });
 
-  // Cerrar menú con tecla Escape
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuDesplegable.classList.contains('activo')) {
       alternarMenu(false);
@@ -991,7 +925,6 @@ function inicializarMenuMovil() {
     }
   });
 
-  // Cerrar al hacer clic fuera del menú
   document.addEventListener('click', (e) => {
     if (
       menuDesplegable.classList.contains('activo') &&
@@ -1007,7 +940,6 @@ function inicializarMenuMovil() {
 // 9. NAVEGACIÓN, CONMUTADOR THREE.JS & SCROLL SPY
 // ============================================================================
 function inicializarNavegacionYModos(gestor3D) {
-  // Conmutadores de Modo WebGL
   const botonesModo = document.querySelectorAll('.boton-modo-render');
   botonesModo.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -1024,32 +956,30 @@ function inicializarNavegacionYModos(gestor3D) {
     btn.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 
-  // Botón de Alternar Audio (con sincronización del estado persistido)
   const botonAudio = document.getElementById('boton-alternar-audio');
   if (botonAudio) {
     if (audio.activo) {
       botonAudio.classList.add('activo');
-      botonAudio.setAttribute('title', 'Audio HUD activado');
-      botonAudio.setAttribute('aria-label', 'Audio HUD activado');
+      botonAudio.setAttribute('title', 'Respuesta sonora activada');
+      botonAudio.setAttribute('aria-label', 'Respuesta sonora activada');
     }
 
     botonAudio.addEventListener('click', () => {
       const activo = audio.alternar();
       if (activo) {
         botonAudio.classList.add('activo');
-        botonAudio.setAttribute('title', 'Audio HUD activado');
-        botonAudio.setAttribute('aria-label', 'Audio HUD activado');
-        anunciarAccesible('Efectos de audio HUD activados.');
+        botonAudio.setAttribute('title', 'Respuesta sonora activada');
+        botonAudio.setAttribute('aria-label', 'Respuesta sonora activada');
+        anunciarAccesible('Respuesta sonora activada.');
       } else {
         botonAudio.classList.remove('activo');
-        botonAudio.setAttribute('title', 'Activar audio cristalino HUD');
-        botonAudio.setAttribute('aria-label', 'Activar audio cristalino HUD');
-        anunciarAccesible('Audio HUD desactivado.');
+        botonAudio.setAttribute('title', 'Activar respuesta sonora sutil');
+        botonAudio.setAttribute('aria-label', 'Activar respuesta sonora sutil');
+        anunciarAccesible('Respuesta sonora desactivada.');
       }
     });
   }
 
-  // Desplazamiento Suave en Enlaces de Navegación
   const enlacesNav = document.querySelectorAll('.enlace-navegacion, .enlace-scroll');
   enlacesNav.forEach((enlace) => {
     enlace.addEventListener('click', (e) => {
@@ -1073,7 +1003,6 @@ function inicializarNavegacionYModos(gestor3D) {
       const normalizado = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
       estado.progresoScroll = normalizado;
 
-      // Detección de sección activa para navbar (escritorio y móvil)
       const secciones = ['hero', 'vision', 'trayectoria', 'stack', 'contacto'];
       for (const secId of secciones) {
         const el = document.getElementById(secId);
