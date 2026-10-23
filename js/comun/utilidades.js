@@ -12,6 +12,13 @@ export class AudioGlaciar {
   constructor() {
     this.activo = false;
     this.contextoAudio = null;
+    try {
+      if (typeof localStorage !== 'undefined') {
+        this.activo = localStorage.getItem('audio_hud_activo') === 'true';
+      }
+    } catch {
+      // Ignorar bloqueos de almacenamiento local
+    }
   }
 
   /**
@@ -36,6 +43,13 @@ export class AudioGlaciar {
   alternar() {
     this.iniciarContexto();
     this.activo = !this.activo;
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('audio_hud_activo', this.activo ? 'true' : 'false');
+      }
+    } catch {
+      // Ignorar bloqueos de almacenamiento local
+    }
 
     if (this.activo && this.contextoAudio) {
       // Armónico sutil de activación
@@ -176,5 +190,19 @@ export function desplazarSuavementeA(idElemento) {
   const elemento = document.getElementById(idElemento);
   if (elemento) {
     elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/**
+ * Emite un anuncio de texto a tecnologías de asistencia (WCAG 2.1 AA)
+ * @param {string} mensaje
+ */
+export function anunciarAccesible(mensaje) {
+  const anunciador = document.getElementById('anunciador-accesible');
+  if (anunciador) {
+    anunciador.textContent = '';
+    setTimeout(() => {
+      anunciador.textContent = mensaje;
+    }, 50);
   }
 }

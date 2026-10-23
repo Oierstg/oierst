@@ -2,6 +2,7 @@
  * LÓGICA DE CONTROL DE LA VISTA PRINCIPAL (PORTAFOLIO)
  * Oier Santo Tomás Gamayo - Portafolio Interactivo
  * Código Modular ES6+, Manipulación Segura del DOM y Cero innerHTML Inseguro
+ * Optimizado para Rendimiento Extremo, Accesibilidad (WCAG 2.1 AA) y Navegación Móvil
  */
 
 import {
@@ -9,9 +10,10 @@ import {
   copiarAlPortapapeles,
   limitarFrecuencia,
   desplazarSuavementeA,
+  anunciarAccesible,
 } from '../comun/utilidades.js';
 
-// Inicialización Segura del Sistema de Audio
+// Inicialización Segura del Sistema de Audio con Memoria Local
 const audio = new AudioGlaciar();
 
 // Estado Global de la Vista
@@ -63,6 +65,12 @@ class GestorEscena3D {
     this.frameId = null;
     this.ultimoEnvioTelemetria = 0;
 
+    // Control de Rendimiento y Accesibilidad
+    this.estaVisible = true;
+    this.observadorVisibilidad = null;
+    this.movimientoReducido = typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     this.iniciar();
   }
 
@@ -90,7 +98,7 @@ class GestorEscena3D {
     this.rootGroup = new THREE.Group();
     this.scene.add(this.rootGroup);
 
-    // 1. Cúpula Exterior Facetada
+    // 1. Cúpula Exterior Facetada (Icosaedro Cryo)
     const outerGeo = new THREE.IcosahedronGeometry(1.72, 1);
     this.outerMat = new THREE.MeshPhysicalMaterial({
       color: new THREE.Color('#0E1726'),
@@ -234,9 +242,41 @@ class GestorEscena3D {
     this.cursorLight.position.set(0, 0, 3.5);
     this.scene.add(this.cursorLight);
 
-    // Eventos y Bucle
+    // Eventos e IntersectionObserver para Optimización de Rendimiento
     this.vincularEventos();
+    this.inicializarObservadorVisibilidad();
+
+    // Iniciar bucle de animación
     this.animar();
+  }
+
+  inicializarObservadorVisibilidad() {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    this.observadorVisibilidad = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const visibleAnterior = this.estaVisible;
+          this.estaVisible = entry.isIntersecting;
+
+          if (this.estaVisible && !this.frameId) {
+            // Reanudar el bucle 3D al volver al viewport
+            this.clock.start();
+            this.animar();
+          } else if (!this.estaVisible && this.frameId) {
+            // Detener el bucle 3D para dejar la CPU/GPU al 0% fuera del Hero
+            cancelAnimationFrame(this.frameId);
+            this.frameId = null;
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    const seccionHero = document.getElementById('hero');
+    if (seccionHero) {
+      this.observadorVisibilidad.observe(seccionHero);
+    }
   }
 
   vincularEventos() {
@@ -307,6 +347,11 @@ class GestorEscena3D {
   }
 
   animar() {
+    if (!this.estaVisible) {
+      this.frameId = null;
+      return;
+    }
+
     this.frameId = requestAnimationFrame(() => this.animar());
 
     const elapsed = this.clock.getElapsedTime();
@@ -340,7 +385,8 @@ class GestorEscena3D {
       this.seedMat.emissiveIntensity = 2.0;
     }
 
-    const multVel = modo === 'overclock' ? 1.85 : 1.0;
+    // Si el usuario tiene reducción de movimiento, suprimir oscilaciones constantes
+    const multVel = this.movimientoReducido ? 0 : (modo === 'overclock' ? 1.85 : 1.0);
     this.rootGroup.rotation.y += 0.0032 * multVel + this.dragVelocity.x;
     this.rootGroup.rotation.x += 0.0014 * multVel + this.dragVelocity.y;
 
@@ -349,21 +395,23 @@ class GestorEscena3D {
     this.rootGroup.rotation.x += (targetGroupX - this.rootGroup.rotation.x) * 0.02;
     this.rootGroup.rotation.z += (targetGroupZ - this.rootGroup.rotation.z) * 0.03;
 
-    this.rootGroup.position.y = Math.sin(elapsed * 1.3) * 0.12;
-    const scalePulse =
-      modo === 'overclock' ? 1 + Math.sin(elapsed * 4.5) * 0.035 : 1 + Math.sin(elapsed * 1.6) * 0.015;
-    this.rootGroup.scale.setScalar(scalePulse);
+    if (!this.movimientoReducido) {
+      this.rootGroup.position.y = Math.sin(elapsed * 1.3) * 0.12;
+      const scalePulse =
+        modo === 'overclock' ? 1 + Math.sin(elapsed * 4.5) * 0.035 : 1 + Math.sin(elapsed * 1.6) * 0.015;
+      this.rootGroup.scale.setScalar(scalePulse);
 
-    this.innerCoreMesh.rotation.y = -elapsed * 0.45 * multVel;
-    this.innerCoreMesh.rotation.z = elapsed * 0.28;
-    this.seedMesh.rotation.x = elapsed * 0.8;
-    this.seedMesh.rotation.y = elapsed * 0.6;
+      this.innerCoreMesh.rotation.y = -elapsed * 0.45 * multVel;
+      this.innerCoreMesh.rotation.z = elapsed * 0.28;
+      this.seedMesh.rotation.x = elapsed * 0.8;
+      this.seedMesh.rotation.y = elapsed * 0.6;
 
-    this.orbitalRing1.rotation.z = elapsed * 0.22;
-    this.orbitalRing2.rotation.y = -elapsed * 0.18;
+      this.orbitalRing1.rotation.z = elapsed * 0.22;
+      this.orbitalRing2.rotation.y = -elapsed * 0.18;
 
-    this.particleSystem.rotation.y = elapsed * 0.05 + this.mouse.x * 0.12;
-    this.particleSystem.rotation.x = -this.mouse.y * 0.08;
+      this.particleSystem.rotation.y = elapsed * 0.05 + this.mouse.x * 0.12;
+      this.particleSystem.rotation.x = -this.mouse.y * 0.08;
+    }
 
     this.cursorLight.position.x = this.mouse.x * 3.8;
     this.cursorLight.position.y = this.mouse.y * 3.8;
@@ -473,6 +521,7 @@ function inicializarManifiesto() {
   const contenedorPalabras = document.getElementById('contenedor-palabras-manifiesto');
   const deslizador = document.getElementById('deslizador-iluminacion');
   const etiquetaPorcentaje = document.getElementById('porcentaje-iluminacion');
+  const botonReinicio = document.getElementById('boton-reinicio-iluminacion');
 
   if (!contenedorPalabras) return;
 
@@ -494,12 +543,38 @@ function inicializarManifiesto() {
     }
   };
 
+  const calcularIluminacionPorScroll = () => {
+    const seccion = document.getElementById('vision');
+    if (!seccion) return;
+
+    const rect = seccion.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    const inicio = viewH * 0.85;
+    const fin = viewH * 0.15;
+    const crudo = (inicio - rect.top) / (inicio - fin + rect.height * 0.45);
+    const progreso = Math.min(Math.max(crudo, 0.12), 1);
+
+    estado.reveladoManifiesto = progreso;
+    if (deslizador) deslizador.value = progreso.toString();
+    actualizarIluminacion(progreso);
+  };
+
   // Deslizador manual
   if (deslizador) {
     deslizador.addEventListener('input', (e) => {
       estado.anulacionManualManifiesto = true;
       estado.reveladoManifiesto = parseFloat(e.target.value);
       actualizarIluminacion(estado.reveladoManifiesto);
+    });
+  }
+
+  // Botón para restablecer el modo automático por scroll
+  if (botonReinicio) {
+    botonReinicio.addEventListener('click', () => {
+      audio.reproducirCampana();
+      estado.anulacionManualManifiesto = false;
+      calcularIluminacionPorScroll();
+      anunciarAccesible('Iluminación automática del manifiesto restablecida.');
     });
   }
 
@@ -513,20 +588,7 @@ function inicializarManifiesto() {
     'scroll',
     limitarFrecuencia(() => {
       if (estado.anulacionManualManifiesto) return;
-
-      const seccion = document.getElementById('vision');
-      if (!seccion) return;
-
-      const rect = seccion.getBoundingClientRect();
-      const viewH = window.innerHeight;
-      const inicio = viewH * 0.85;
-      const fin = viewH * 0.15;
-      const crudo = (inicio - rect.top) / (inicio - fin + rect.height * 0.45);
-      const progreso = Math.min(Math.max(crudo, 0.12), 1);
-
-      estado.reveladoManifiesto = progreso;
-      if (deslizador) deslizador.value = progreso.toString();
-      actualizarIluminacion(progreso);
+      calcularIluminacionPorScroll();
     }, 50),
     { passive: true }
   );
@@ -535,7 +597,7 @@ function inicializarManifiesto() {
 }
 
 // ============================================================================
-// 5. LÍNEA DE TIEMPO: FILTRADO Y ACORDEÓN INTERACTIVO
+// 5. LÍNEA DE TIEMPO: FILTRADO Y ACORDEÓN INTERACTIVO ACCESIBLE
 // ============================================================================
 function inicializarTrayectoria() {
   const botonesFiltro = document.querySelectorAll('.boton-filtro-trayectoria');
@@ -546,42 +608,64 @@ function inicializarTrayectoria() {
       audio.reproducirCampana();
       const categoria = boton.getAttribute('data-categoria');
 
-      botonesFiltro.forEach((b) => b.classList.remove('activo'));
+      botonesFiltro.forEach((b) => {
+        b.classList.remove('activo');
+        b.setAttribute('aria-pressed', 'false');
+      });
       boton.classList.add('activo');
+      boton.setAttribute('aria-pressed', 'true');
 
+      let cantidadVisibles = 0;
       itemsTimeline.forEach((item) => {
         const itemCat = item.getAttribute('data-tipo');
         if (categoria === 'TODOS' || itemCat === categoria) {
           item.style.display = 'block';
+          cantidadVisibles++;
         } else {
           item.style.display = 'none';
         }
       });
+
+      anunciarAccesible(`Filtro aplicado: ${categoria}. Mostrando ${cantidadVisibles} registros.`);
     });
 
     boton.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 
   itemsTimeline.forEach((item) => {
-    item.addEventListener('click', () => {
+    const cabeceraBoton = item.querySelector('.item-linea-tiempo__cabecera');
+    const elementoActivador = cabeceraBoton || item;
+
+    const alternarHito = () => {
       audio.reproducirCampana();
       const yaExpandido = item.classList.contains('expandido');
 
       // Colapsar los demás
       itemsTimeline.forEach((i) => {
         i.classList.remove('expandido');
+        const b = i.querySelector('.item-linea-tiempo__cabecera');
+        if (b) b.setAttribute('aria-expanded', 'false');
         const accionTexto = i.querySelector('.item-linea-tiempo__accion-texto');
         if (accionTexto) accionTexto.textContent = 'INSPECCIONAR NODO';
       });
 
       if (!yaExpandido) {
         item.classList.add('expandido');
+        if (cabeceraBoton) cabeceraBoton.setAttribute('aria-expanded', 'true');
         const accionTexto = item.querySelector('.item-linea-tiempo__accion-texto');
         if (accionTexto) accionTexto.textContent = 'OCULTAR DETALLES';
+
+        const tituloHito = item.querySelector('.item-linea-tiempo__titulo')?.textContent?.trim() || '';
+        anunciarAccesible(`Hito expandido: ${tituloHito}`);
       }
+    };
+
+    elementoActivador.addEventListener('click', (e) => {
+      e.stopPropagation();
+      alternarHito();
     });
 
-    item.addEventListener('mouseenter', () => audio.reproducirTick());
+    elementoActivador.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 }
 
@@ -612,11 +696,24 @@ function inicializarMatrizYHomelab() {
       audio.reproducirCampana();
       seleccionar();
     });
+
+    // Accesibilidad por Teclado (WCAG 2.1 AA)
+    tarjeta.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        audio.reproducirCampana();
+        seleccionar();
+        const nombre = tarjeta.querySelector('.tarjeta-tecnologia__nombre')?.textContent?.trim() || '';
+        anunciarAccesible(`Competencia seleccionada: ${nombre}.`);
+      }
+    });
   });
 
   // Consola Homelab Interactiva
   const contenedorLogs = document.getElementById('terminal-logs-contenedor');
   const botonesComando = document.querySelectorAll('.boton-comando-shell');
+  const formShell = document.getElementById('formulario-shell-interactivo');
+  const inputShell = document.getElementById('input-comando-shell');
 
   const agregarLog = (tipo, texto) => {
     if (!contenedorLogs) return;
@@ -635,43 +732,93 @@ function inicializarMatrizYHomelab() {
     contenedorLogs.scrollTop = contenedorLogs.scrollHeight;
   };
 
+  const ejecutarComando = (cmdTexto) => {
+    const limpio = cmdTexto.trim().toLowerCase();
+    if (!limpio) return;
+
+    if (limpio === 'status' || limpio === 'status --homelab' || limpio.startsWith('status')) {
+      agregarLog('cmd', `$ ${cmdTexto}`);
+      agregarLog(
+        'ok',
+        'UPTIME: 99.9% | ENV: LOCAL SERVER (Basauri) | STATE: EXPERIMENTING | CONTAINERS: 14 ACTIVE'
+      );
+    } else if (limpio === 'ai' || limpio === 'pipeline' || limpio.includes('voice') || limpio.includes('llm')) {
+      agregarLog('cmd', `$ ${cmdTexto}`);
+      agregarLog(
+        'ai',
+        'VOICE_AI (DOMAX Engine): READY | LOCAL_LLM: Qwen/Llama Quantized | SOMORROSTRO BIG DATA: ACTIVE'
+      );
+    } else if (limpio === 'stack' || limpio === 'layers' || limpio.includes('stack')) {
+      agregarLog('cmd', `$ ${cmdTexto}`);
+      agregarLog(
+        'ok',
+        'L1 [SMR]: Linux/Redes -> L2 [DAM]: Java/Python/JS/SQL/Mongo -> L3 [IA]: Automation & GenAI'
+      );
+    } else if (limpio === 'ping') {
+      agregarLog('cmd', '$ ping basauri.gateway');
+      agregarLog('ok', '64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=11.2ms [NOMINAL]');
+    } else if (limpio === 'whoami') {
+      agregarLog('cmd', '$ whoami');
+      agregarLog('ok', 'oier@stg-homelab: Oier Santo Tomás Gamayo // AI Integration & Multiplatform Specialist');
+    } else if (limpio === 'contacto' || limpio === 'contact') {
+      agregarLog('cmd', `$ ${cmdTexto}`);
+      agregarLog('ok', 'Desplazando al canal de conexión directa (#contacto)...');
+      desplazarSuavementeA('contacto');
+    } else if (limpio === 'help' || limpio === 'ayuda' || limpio === '?') {
+      agregarLog('cmd', '$ help');
+      agregarLog('sys', 'COMANDOS DISPONIBLES: status, ai, stack, ping, whoami, contacto, clear');
+    } else if (limpio === 'clear' || limpio === 'cls') {
+      if (contenedorLogs) {
+        contenedorLogs.textContent = '';
+        agregarLog('sys', 'STG-HOMELAB TERMINAL // BUFFER CLEARED');
+        agregarLog('ok', 'System ready. Click any diagnostic preset or type a command.');
+      }
+    } else {
+      agregarLog('cmd', `$ ${cmdTexto}`);
+      agregarLog('sys', `bash: comando no encontrado: "${cmdTexto}". Escribe "help" para ver los comandos.`);
+    }
+  };
+
+  // Ejecución vía Presets
   botonesComando.forEach((btn) => {
     btn.addEventListener('click', () => {
       audio.reproducirCampana();
       const comando = btn.getAttribute('data-comando');
-
-      if (comando === 'status') {
-        agregarLog('cmd', '$ status --homelab --verbose');
-        agregarLog(
-          'ok',
-          'UPTIME: 99.9% | ENV: LOCAL SERVER (Basauri) | STATE: EXPERIMENTING | CONTAINERS: 14 ACTIVE'
-        );
-      } else if (comando === 'ai') {
-        agregarLog('cmd', '$ pipeline --inspect voice-and-llm');
-        agregarLog(
-          'ai',
-          'VOICE_AI (DOMAX Engine): READY | LOCAL_LLM: Qwen/Llama Quantized | SOMORROSTRO BIG DATA: ACTIVE'
-        );
-      } else if (comando === 'stack') {
-        agregarLog('cmd', '$ stack --verify-layers');
-        agregarLog(
-          'ok',
-          'L1 [SMR]: Linux/Redes -> L2 [DAM]: Java/Python/JS/SQL/Mongo -> L3 [IA]: Automation & GenAI'
-        );
-      } else if (comando === 'clear') {
-        if (contenedorLogs) {
-          contenedorLogs.textContent = '';
-          agregarLog('sys', 'STG-HOMELAB TERMINAL // BUFFER CLEARED');
-          agregarLog('ok', 'System ready. Click any diagnostic preset below.');
-        }
-      }
+      if (comando === 'status') ejecutarComando('status --homelab');
+      else if (comando === 'ai') ejecutarComando('pipeline --ai');
+      else if (comando === 'stack') ejecutarComando('stack --layers');
+      else if (comando === 'clear') ejecutarComando('clear');
     });
 
     btn.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 
-  // Simulación Periódica de Telemetría Dinámica Homelab
+  // Ejecución Interactiva por Teclado
+  if (formShell && inputShell) {
+    formShell.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const texto = inputShell.value;
+      if (texto.trim()) {
+        audio.reproducirCampana();
+        ejecutarComando(texto);
+        inputShell.value = '';
+      }
+    });
+  }
+
+  // Simulación Periódica de Telemetría Dinámica Homelab (Optimizada con visibilidad)
   setInterval(() => {
+    if (document.visibilityState === 'hidden') return;
+
+    // Verificar si la sección de stack está en el viewport
+    const seccionStack = document.getElementById('stack');
+    if (seccionStack) {
+      const rect = seccionStack.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) {
+        return; // Pausar simulación cuando no se visualiza la sección
+      }
+    }
+
     estado.telemetriaHomelab.cpu = Math.max(
       14,
       Math.min(68, estado.telemetriaHomelab.cpu + Math.floor(Math.random() * 9) - 4)
@@ -712,6 +859,8 @@ function inicializarContacto() {
         if (iconoCheck) iconoCheck.classList.remove('elemento-oculto');
         if (iconoMail) iconoMail.classList.add('elemento-oculto');
 
+        anunciarAccesible('Correo electrónico oier.santotomas@dev-ops.es copiado al portapapeles.');
+
         setTimeout(() => {
           if (textoEmail) textoEmail.textContent = 'oier.santotomas@dev-ops.es';
           if (iconoCheck) iconoCheck.classList.add('elemento-oculto');
@@ -723,17 +872,21 @@ function inicializarContacto() {
     btnCopiar.addEventListener('mouseenter', () => audio.reproducirTick());
   }
 
-  // Temas de Contacto Rápido
+  // Temas de Contacto Rápido (Radiogroup Accesible)
   const botonesTemas = document.querySelectorAll('.boton-tema-interes');
   botonesTemas.forEach((btn) => {
     btn.addEventListener('click', () => {
       audio.reproducirCampana();
-      botonesTemas.forEach((b) => b.classList.remove('activo'));
+      botonesTemas.forEach((b) => {
+        b.classList.remove('activo');
+        b.setAttribute('aria-checked', 'false');
+      });
       btn.classList.add('activo');
+      btn.setAttribute('aria-checked', 'true');
     });
   });
 
-  // Envío del Formulario
+  // Envío del Formulario con Despacho de Correo Estructurado
   const formulario = document.getElementById('formulario-transmision');
   const botonEnviar = document.getElementById('boton-enviar-formulario');
   const textoBotonEnviar = document.getElementById('texto-boton-enviar');
@@ -743,13 +896,35 @@ function inicializarContacto() {
       e.preventDefault();
       audio.reproducirCampana();
 
+      const nombre = document.getElementById('contacto-nombre')?.value?.trim() || 'Contacto';
+      const email = document.getElementById('contacto-email')?.value?.trim() || '';
+      const campoMensaje = document.getElementById('mensaje-proyecto');
+      const mensaje = campoMensaje ? campoMensaje.value.trim() : '';
+      const temaActivo = document.querySelector('.boton-tema-interes.activo')?.textContent?.trim() || 'Consulta General';
+
       const textoOriginal = textoBotonEnviar.textContent;
       textoBotonEnviar.textContent = 'TRANSMISIÓN REGISTRADA · GRACIAS';
-      botonEnviar.style.backgroundColor = '#10B981';
+      botonEnviar.style.backgroundColor = 'var(--color-estado-activo)';
       botonEnviar.style.color = '#FFFFFF';
 
-      const campoMensaje = document.getElementById('mensaje-proyecto');
+      anunciarAccesible('Propuesta registrada con éxito. Abriendo canal de comunicación.');
+
+      // Despacho de enlace mailto preformateado
+      const asunto = encodeURIComponent(`[Portafolio STG] Propuesta de ${nombre} // ${temaActivo}`);
+      const cuerpo = encodeURIComponent(
+        `Hola Oier,\n\nNombre / Empresa: ${nombre}\nCorreo: ${email}\nÁrea de Interés: ${temaActivo}\n\nMensaje o Especificación Técnica:\n${mensaje}\n\n---\nEnviado desde el portafolio interactivo STG`
+      );
+      const enlaceMailto = `mailto:oier.santotomas@dev-ops.es?subject=${asunto}&body=${cuerpo}`;
+
+      setTimeout(() => {
+        window.location.href = enlaceMailto;
+      }, 600);
+
       if (campoMensaje) campoMensaje.value = '';
+      const campoNombre = document.getElementById('contacto-nombre');
+      const campoEmail = document.getElementById('contacto-email');
+      if (campoNombre) campoNombre.value = '';
+      if (campoEmail) campoEmail.value = '';
 
       setTimeout(() => {
         textoBotonEnviar.textContent = textoOriginal;
@@ -761,7 +936,75 @@ function inicializarContacto() {
 }
 
 // ============================================================================
-// 8. NAVEGACIÓN, CONMUTADOR THREE.JS & SCROLL SPY
+// 8. NAVEGACIÓN MÓVIL ADAPTATIVA (< 768px)
+// ============================================================================
+function inicializarMenuMovil() {
+  const botonMenu = document.getElementById('boton-menu-movil');
+  const menuDesplegable = document.getElementById('menu-movil-desplegable');
+  if (!botonMenu || !menuDesplegable) return;
+
+  const iconoHamburguesa = botonMenu.querySelector('.icono-hamburguesa');
+  const iconoCerrar = botonMenu.querySelector('.icono-cerrar');
+
+  const alternarMenu = (forzarEstado) => {
+    const estaActivo = menuDesplegable.classList.contains('activo');
+    const abrir = typeof forzarEstado === 'boolean' ? forzarEstado : !estaActivo;
+
+    if (abrir) {
+      audio.reproducirCampana();
+      menuDesplegable.classList.add('activo');
+      menuDesplegable.setAttribute('aria-hidden', 'false');
+      botonMenu.setAttribute('aria-expanded', 'true');
+      if (iconoHamburguesa) iconoHamburguesa.classList.add('elemento-oculto');
+      if (iconoCerrar) iconoCerrar.classList.remove('elemento-oculto');
+      anunciarAccesible('Menú de navegación móvil abierto.');
+    } else {
+      menuDesplegable.classList.remove('activo');
+      menuDesplegable.setAttribute('aria-hidden', 'true');
+      botonMenu.setAttribute('aria-expanded', 'false');
+      if (iconoHamburguesa) iconoHamburguesa.classList.remove('elemento-oculto');
+      if (iconoCerrar) iconoCerrar.classList.add('elemento-oculto');
+    }
+  };
+
+  botonMenu.addEventListener('click', () => alternarMenu());
+
+  // Navegación en enlaces del menú móvil
+  const enlacesMoviles = menuDesplegable.querySelectorAll('.enlace-navegacion-movil');
+  enlacesMoviles.forEach((enlace) => {
+    enlace.addEventListener('click', (e) => {
+      e.preventDefault();
+      audio.reproducirCampana();
+      const destinoId = enlace.getAttribute('data-destino');
+      alternarMenu(false);
+      if (destinoId) {
+        desplazarSuavementeA(destinoId);
+      }
+    });
+  });
+
+  // Cerrar menú con tecla Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuDesplegable.classList.contains('activo')) {
+      alternarMenu(false);
+      botonMenu.focus();
+    }
+  });
+
+  // Cerrar al hacer clic fuera del menú
+  document.addEventListener('click', (e) => {
+    if (
+      menuDesplegable.classList.contains('activo') &&
+      !menuDesplegable.contains(e.target) &&
+      !botonMenu.contains(e.target)
+    ) {
+      alternarMenu(false);
+    }
+  });
+}
+
+// ============================================================================
+// 9. NAVEGACIÓN, CONMUTADOR THREE.JS & SCROLL SPY
 // ============================================================================
 function inicializarNavegacionYModos(gestor3D) {
   // Conmutadores de Modo WebGL
@@ -781,19 +1024,27 @@ function inicializarNavegacionYModos(gestor3D) {
     btn.addEventListener('mouseenter', () => audio.reproducirTick());
   });
 
-  // Botón de Alternar Audio
+  // Botón de Alternar Audio (con sincronización del estado persistido)
   const botonAudio = document.getElementById('boton-alternar-audio');
   if (botonAudio) {
+    if (audio.activo) {
+      botonAudio.classList.add('activo');
+      botonAudio.setAttribute('title', 'Audio HUD activado');
+      botonAudio.setAttribute('aria-label', 'Audio HUD activado');
+    }
+
     botonAudio.addEventListener('click', () => {
       const activo = audio.alternar();
       if (activo) {
         botonAudio.classList.add('activo');
         botonAudio.setAttribute('title', 'Audio HUD activado');
         botonAudio.setAttribute('aria-label', 'Audio HUD activado');
+        anunciarAccesible('Efectos de audio HUD activados.');
       } else {
         botonAudio.classList.remove('activo');
         botonAudio.setAttribute('title', 'Activar audio cristalino HUD');
         botonAudio.setAttribute('aria-label', 'Activar audio cristalino HUD');
+        anunciarAccesible('Audio HUD desactivado.');
       }
     });
   }
@@ -822,14 +1073,14 @@ function inicializarNavegacionYModos(gestor3D) {
       const normalizado = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
       estado.progresoScroll = normalizado;
 
-      // Detección de sección activa para navbar
+      // Detección de sección activa para navbar (escritorio y móvil)
       const secciones = ['hero', 'vision', 'trayectoria', 'stack', 'contacto'];
       for (const secId of secciones) {
         const el = document.getElementById(secId);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= window.innerHeight * 0.25) {
-            document.querySelectorAll('.enlace-navegacion').forEach((nav) => {
+            document.querySelectorAll('.enlace-navegacion, .enlace-navegacion-movil').forEach((nav) => {
               if (nav.getAttribute('data-destino') === secId) {
                 nav.classList.add('activo');
               } else {
@@ -857,5 +1108,6 @@ document.addEventListener('DOMContentLoaded', () => {
   inicializarTrayectoria();
   inicializarMatrizYHomelab();
   inicializarContacto();
+  inicializarMenuMovil();
   inicializarNavegacionYModos(gestor3D);
 });
